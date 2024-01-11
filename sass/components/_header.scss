@@ -1,0 +1,121 @@
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9000;
+  padding: 0.5rem 0;
+  transition: background 0.4s ease, border 0.4s ease;
+}
+
+header[data-background="true"] {
+  background-color: var(--clr-background-900);
+  border-bottom: 1px solid var(--clr-text-100);
+}
+
+header[data-background="false"] {
+  background-color: transparent;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.nav__list {
+  display: flex;
+  gap: clamp(1em, 5vw, 3em);
+  font-family: var(--ff-accent);
+}
+
+.nav__list a {
+  display: block;
+  width: max-content;
+  text-decoration: none;
+  color: var(--clr-text-50);
+}
+
+.nav__list a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  margin-inline: auto;
+  background: var(--gradient-linearPrimaryAccent);
+  transition: all 0.2s ease-in-out;
+}
+
+.nav__list a:is(:hover, :focus)::after {
+  width: 100%;
+}
+
+@media (max-width: 34em) {
+  .nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9500;
+    height: 100%;
+    inset: 0 0 0 40%;
+
+    padding: min(16vh, 8rem) 2em;
+
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+
+    background-color: rgb(0, 0, 0);
+  }
+
+  @supports (backdrop-filter: blur(5px)) {
+    .nav {
+      background-color: rgba(0, 0, 0, 0.95);
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+    }
+  }
+
+  .nav[data-visible] {
+    transform: translateX(0);
+  }
+
+  .nav__list {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: fixed;
+    top: 0.5rem;
+    right: 0.8rem;
+    z-index: 9999;
+    overflow: hidden;
+    aspect-ratio: 1;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-nav-toggle .mobile-nav-toggle__hamburger {
+    transition: translate 1s, rotate 1s;
+  }
+  .mobile-nav-toggle[aria-expanded="true"] .mobile-nav-toggle__hamburger {
+    translate: 5% - 5%;
+    rotate: 0.125turn;
+  }
+  .mobile-nav-toggle .line {
+    stroke-dasharray: 60 31 60 300;
+    transition: 1s;
+  }
+  .mobile-nav-toggle[aria-expanded="true"] .line {
+    stroke-dasharray: 60 105 60 300;
+    stroke-dashoffset: -90;
+  }
+}

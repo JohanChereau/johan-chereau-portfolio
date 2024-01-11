@@ -1,0 +1,110 @@
+:root {
+  --clr-text-50: hsl(225, 15%, 95%);
+  --clr-text-100: hsl(227, 18%, 90%);
+  --clr-text-200: hsl(230, 18%, 80%);
+  --clr-text-300: hsl(229, 18%, 70%);
+  --clr-text-400: hsl(231, 17%, 60%);
+  --clr-text-500: hsl(230, 17%, 50%);
+  --clr-text-600: hsl(231, 17%, 40%);
+  --clr-text-700: hsl(229, 18%, 30%);
+  --clr-text-800: hsl(230, 18%, 20%);
+  --clr-text-900: hsl(227, 18%, 10%);
+  --clr-text-950: hsl(240, 15%, 5%);
+
+  --clr-background-50: hsl(229, 62%, 95%);
+  --clr-background-100: hsl(227, 65%, 90%);
+  --clr-background-200: hsl(228, 65%, 80%);
+  --clr-background-300: hsl(228, 63%, 70%);
+  --clr-background-400: hsl(228, 64%, 60%);
+  --clr-background-500: hsl(228, 64%, 50%);
+  --clr-background-600: hsl(228, 64%, 40%);
+  --clr-background-700: hsl(228, 63%, 30%);
+  --clr-background-800: hsl(228, 65%, 20%);
+  --clr-background-900: hsl(227, 65%, 10%);
+  --clr-background-950: hsl(229, 62%, 5%);
+
+  --clr-primary-50: hsl(180, 77%, 95%);
+  --clr-primary-100: hsl(180, 80%, 90%);
+  --clr-primary-200: hsl(180, 78%, 80%);
+  --clr-primary-300: hsl(180, 79%, 70%);
+  --clr-primary-400: hsl(180, 79%, 60%);
+  --clr-primary-500: hsl(180, 79%, 50%);
+  --clr-primary-600: hsl(180, 79%, 40%);
+  --clr-primary-700: hsl(180, 79%, 30%);
+  --clr-primary-800: hsl(180, 78%, 20%);
+  --clr-primary-900: hsl(180, 80%, 10%);
+  --clr-primary-950: hsl(180, 77%, 5%);
+
+  --clr-secondary-50: hsl(229, 68%, 95%);
+  --clr-secondary-100: hsl(227, 65%, 90%);
+  --clr-secondary-200: hsl(228, 65%, 80%);
+  --clr-secondary-300: hsl(228, 65%, 70%);
+  --clr-secondary-400: hsl(228, 65%, 60%);
+  --clr-secondary-500: hsl(228, 65%, 50%);
+  --clr-secondary-600: hsl(228, 65%, 40%);
+  --clr-secondary-700: hsl(228, 65%, 30%);
+  --clr-secondary-800: hsl(228, 65%, 20%);
+  --clr-secondary-900: hsl(227, 65%, 10%);
+  --clr-secondary-950: hsl(226, 68%, 5%);
+
+  --clr-accent-50: hsl(229, 84%, 95%);
+  --clr-accent-100: hsl(228, 80%, 90%);
+  --clr-accent-200: hsl(228, 80%, 80%);
+  --clr-accent-300: hsl(228, 80%, 70%);
+  --clr-accent-400: hsl(228, 81%, 60%);
+  --clr-accent-500: hsl(228, 81%, 50%);
+  --clr-accent-600: hsl(228, 81%, 40%);
+  --clr-accent-700: hsl(228, 80%, 30%);
+  --clr-accent-800: hsl(228, 80%, 20%);
+  --clr-accent-900: hsl(228, 80%, 10%);
+  --clr-accent-950: hsl(226, 84%, 5%);
+
+  --gradient-linearPrimarySecondary: linear-gradient(
+    hsl(180, 79%, 58%),
+    hsl(228, 65%, 34%)
+  );
+  --gradient-linearPrimaryAccent: linear-gradient(
+    to right,
+    hsl(180, 79%, 58%),
+    hsl(228, 81%, 56%)
+  );
+  --gradient-linearSecondaryAccent: linear-gradient(
+    hsl(228, 65%, 34%),
+    hsl(228, 81%, 56%)
+  );
+  --gradient-radialPrimarySecondary: radial-gradient(
+    hsl(180, 79%, 58%),
+    hsl(228, 65%, 34%)
+  );
+  --gradient-radialPrimaryAccent: radial-gradient(
+    hsl(180, 79%, 58%),
+    hsl(228, 81%, 56%)
+  );
+  --gradient-radialSecondaryAccent: radial-gradient(
+    hsl(228, 65%, 34%),
+    hsl(228, 81%, 56%)
+  );
+
+  --ff-accent: "Montserrat", sans-serif;
+  --ff-default: "Poppins", sans-serif;
+
+  --fw-bold: 700;
+  --fw-regular: 400;
+  --fw-light: 300;
+
+  --fs-900: 2.4rem;
+  --fs-800: 1.9rem;
+  --fs-600: 1.5rem;
+  --fs-400: 1.1rem;
+  --fs-300: 1rem;
+}
+
+@media (min-width: 50em) {
+  :root {
+    --fs-900: 3.6rem;
+    --fs-800: 2.4rem;
+    --fs-600: 1.6rem;
+    --fs-400: 1.2rem;
+    --fs-300: 1.1rem;
+  }
+}

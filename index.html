@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Johan Chereau | Portfolio</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/icons/johan-chereau-logo.svg"
+      type="image/x-icon"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <!-- Scripts -->
+    <script src="./scripts/navigation.js" defer></script>
+    <script src="./scripts/scrollTrigger.js" defer></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container header-wrapper">
+        <a href="#" class="logo" data-type="badge">
+          <img
+            src="./assets/icons/johan-chereau-logo.svg"
+            alt="Johan Chereau logo"
+            class="logo__img"
+          />
+        </a>
+
+        <button
+          class="mobile-nav-toggle"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Menu</span>
+          <svg
+            stroke="var(--clr-text-50)"
+            fill="none"
+            class="mobile-nav-toggle__hamburger"
+            viewBox="-10 -10 120 120"
+            width="50"
+          >
+            <path
+              class="line"
+              stroke-width="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70"
+            ></path>
+          </svg>
+        </button>
+
+        <nav class="nav" id="primary-navigation">
+          <ul class="nav__list" aria-label="primary" role="list">
+            <li><a href="#">Compétences</a></li>
+            <li><a href="#">Projets</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </body>
+</html>

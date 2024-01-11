@@ -1,0 +1,19 @@
+.logo {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.logo[data-type="badge"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.6em;
+  aspect-ratio: 1;
+  background-color: var(--clr-background-900);
+  border-radius: 50%;
+}
+
+.logo__img {
+  width: 35px;
+}
