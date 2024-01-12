@@ -1,0 +1,22 @@
+.hero-section-wrapper {
+  --hero-section-spacing: 1.2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--hero-section-spacing);
+  min-height: calc(100svh - 80px);
+  margin-top: minmax(4rem, 5vh);
+
+  padding: clamp(2em, 10vw, 4em) 0;
+}
+
+.hero-section__title {
+  font-size: var(--fs-900);
+  line-height: 1.2;
+}
+
+.hero-section__subtitle {
+  font-size: var(--fs-800);
+  font-weight: var(--fw-extra-light);
+}

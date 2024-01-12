@@ -1,6 +1,9 @@
 .container {
   --max-width: 1210px;
-  --padding: 1rem;
-  width: min(var(--max-width), 100% - var(--padding) * 2);
+  --padding: 5rem;
+
+  // width: min(var(--max-width), 100% - var(--padding) * 2);
+  width: 80%;
+  max-width: var(--max-width);
   margin-inline: auto;
 }

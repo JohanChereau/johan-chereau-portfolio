@@ -1,0 +1,6 @@
+.text-primary-gradient {
+  background: var(--gradient-linearPrimaryAccent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

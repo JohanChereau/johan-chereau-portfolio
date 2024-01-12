@@ -9,7 +9,7 @@ header {
 }
 
 header[data-background="true"] {
-  background-color: var(--clr-background-900);
+  background-color: var(--clr-background-950);
   border-bottom: 1px solid var(--clr-text-100);
 }
 
@@ -55,7 +55,7 @@ header[data-background="false"] {
   width: 100%;
 }
 
-@media (max-width: 34em) {
+@media (max-width: 38em) {
   .nav {
     position: fixed;
     top: 0;

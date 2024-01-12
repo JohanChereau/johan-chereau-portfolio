@@ -1,0 +1,26 @@
+.skills__categories {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  text-align: center;
+}
+
+.skills__category-title {
+  font-size: var(--fs-600);
+  margin-bottom: 0.3em;
+}
+
+.skill {
+  font-weight: var(--fw-extra-light);
+}
+
+@media (min-width: 50em) {
+  .skills__categories {
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+
+    text-align: left;
+  }
+}

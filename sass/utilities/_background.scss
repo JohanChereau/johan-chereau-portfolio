@@ -1,0 +1,14 @@
+.background-particles {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  height: 100svh;
+  width: 100%;
+  z-index: -1;
+}
+
+.background-particles > canvas {
+  width: 100%;
+  height: 100%;
+}

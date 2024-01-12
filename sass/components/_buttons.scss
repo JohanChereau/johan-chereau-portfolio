@@ -1,0 +1,38 @@
+// General
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  max-width: max-content;
+
+  padding: 0.6em 1em;
+
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.button:is(:hover, :focus) {
+  transform: translate(0, -3px);
+}
+
+// Primary
+
+.button[data-type="primary"] {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-text-950);
+  transition: box-shadow 0.2s ease-out;
+}
+
+.button[data-type="primary"]:is(:hover, :focus) {
+  box-shadow: 0 20px 80px -10px var(--clr-primary-400);
+}
+
+// Secondary
+
+.button[data-type="secondary"] {
+  background-color: var(--clr-secondary-600);
+  color: var(--clr-text-50);
+}

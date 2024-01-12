@@ -24,12 +24,16 @@
     <!-- Scripts -->
     <script src="./scripts/navigation.js" defer></script>
     <script src="./scripts/scrollTrigger.js" defer></script>
+    <script src="./scripts/lib/particles.min.js" defer></script>
+    <script src="./scripts/heroParticles.js" defer></script>
   </head>
 
   <body>
+    <div class="background-particles" id="background-particles"></div>
+
     <header class="header">
       <div class="container header-wrapper">
-        <a href="#" class="logo" data-type="badge">
+        <a href="#hero" class="logo" data-type="badge">
           <img
             src="./assets/icons/johan-chereau-logo.svg"
             alt="Johan Chereau logo"
@@ -62,7 +66,7 @@
 
         <nav class="nav" id="primary-navigation">
           <ul class="nav__list" aria-label="primary" role="list">
-            <li><a href="#">Compétences</a></li>
+            <li><a href="#skills">Compétences</a></li>
             <li><a href="#">Projets</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">Blog</a></li>
@@ -70,5 +74,111 @@
         </nav>
       </div>
     </header>
+
+    <main>
+      <section class="hero-section" id="hero">
+        <div class="container hero-section-wrapper">
+          <h1 class="hero-section__title">
+            Je suis <br />
+            <span class="text-primary-gradient">JOHAN CHEREAU</span>
+          </h1>
+          <p class="hero-section__subtitle">Développeur web front-end.</p>
+
+          <ul class="contact__list" role="list">
+            <li><a href="#" class="button" data-type="primary">LinkedIn</a></li>
+            <li>
+              <a href="#" class="button" data-type="primary"
+                >contact@johan-chereau.com</a
+              >
+            </li>
+            <li><a href="#" class="button" data-type="primary">GitHub</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="skills-section" id="skills">
+        <div class="container">
+          <h2 class="section__title">Compétences</h2>
+
+          <ul class="skills__categories" role="list">
+            <li class="skills__category">
+              <h3 class="skills__category-title">Design</h3>
+
+              <ul class="skills__list" role="list">
+                <li class="skill">
+                  <img src="" alt="" class="skill__icon" />
+                  <span class="skill__name">Figma</span>
+                </li>
+                <li class="skill">
+                  <img src="" alt="" class="skill__icon" />
+                  <span class="skill__name">Adobe XD</span>
+                </li>
+                <li class="skill">
+                  <img src="" alt="" class="skill__icon" />
+                  <span class="skill__name">Photoshop</span>
+                </li>
+              </ul>
+            </li>
+
+            <li class="skills__category">
+              <h3 class="skills__category-title">Front-end</h3>
+
+              <ul class="skills__list" role="list">
+                <li class="skill">
+                  <img src="" alt="" class="skill__icon" />
+                  <span class="skill__name">HTML & CSS</span>
+                </li>
+                <li class="skill">
+                  <img src="" alt="" class="skill__icon" />
+                  <span class="skill__name">JavaScript</span>
+                </li>
+                <li class="skill">
+                  <img src="" alt="" class="skill__icon" />
+                  <span class="skill__name">ReactJS</span>
+                </li>
+              </ul>
+            </li>
+
+            <li class="skills__category">
+              <h3 class="skills__category-title">Back-end</h3>
+
+              <ul class="skills__list" role="list">
+                <li class="skill">
+                  <img src="" alt="" class="skill__icon" />
+                  <span class="skill__name">NodeJS</span>
+                </li>
+                <li class="skill">
+                  <img src="" alt="" class="skill__icon" />
+                  <span class="skill__name">Express</span>
+                </li>
+                <li class="skill">
+                  <img src="" alt="" class="skill__icon" />
+                  <span class="skill__name">Electron</span>
+                </li>
+              </ul>
+            </li>
+
+            <li class="skills__category">
+              <h3 class="skills__category-title">Autres</h3>
+
+              <ul class="skills__list" role="list">
+                <li class="skill">
+                  <img src="" alt="" class="skill__icon" />
+                  <span class="skill__name">Git & GitHub</span>
+                </li>
+                <li class="skill">
+                  <img src="" alt="" class="skill__icon" />
+                  <span class="skill__name">SaSS</span>
+                </li>
+                <li class="skill">
+                  <img src="" alt="" class="skill__icon" />
+                  <span class="skill__name">VSCode</span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
