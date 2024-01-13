@@ -1,3 +1,7 @@
+.skills-section {
+  padding: var(--section-padding);
+}
+
 .skills__categories {
   display: flex;
   flex-direction: column;
@@ -12,7 +16,14 @@
 }
 
 .skill {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
   font-weight: var(--fw-extra-light);
+}
+
+.skill__icon {
+  width: 36px;
 }
 
 @media (min-width: 50em) {

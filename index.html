@@ -29,7 +29,11 @@
   </head>
 
   <body>
-    <div class="background-particles" id="background-particles"></div>
+    <div
+      class="background-particles"
+      id="background-particles"
+      aria-hidden="true"
+    ></div>
 
     <header class="header">
       <div class="container header-wrapper">
@@ -67,8 +71,8 @@
         <nav class="nav" id="primary-navigation">
           <ul class="nav__list" aria-label="primary" role="list">
             <li><a href="#skills">Compétences</a></li>
-            <li><a href="#">Projets</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
             <li><a href="#">Blog</a></li>
           </ul>
         </nav>
@@ -98,7 +102,7 @@
 
       <section class="skills-section" id="skills">
         <div class="container">
-          <h2 class="section__title">Compétences</h2>
+          <h2 class="section__title" data-spacing="large">Compétences</h2>
 
           <ul class="skills__categories" role="list">
             <li class="skills__category">
@@ -106,15 +110,27 @@
 
               <ul class="skills__list" role="list">
                 <li class="skill">
-                  <img src="" alt="" class="skill__icon" />
+                  <img
+                    src="./assets/icons/figma.svg"
+                    alt="Figma logo"
+                    class="skill__icon"
+                  />
                   <span class="skill__name">Figma</span>
                 </li>
                 <li class="skill">
-                  <img src="" alt="" class="skill__icon" />
+                  <img
+                    src="./assets/icons/adobe-xd.svg"
+                    alt="Adobe XD logo"
+                    class="skill__icon"
+                  />
                   <span class="skill__name">Adobe XD</span>
                 </li>
                 <li class="skill">
-                  <img src="" alt="" class="skill__icon" />
+                  <img
+                    src="./assets/icons/photoshop.svg"
+                    alt="Photoshop logo"
+                    class="skill__icon"
+                  />
                   <span class="skill__name">Photoshop</span>
                 </li>
               </ul>
@@ -125,11 +141,19 @@
 
               <ul class="skills__list" role="list">
                 <li class="skill">
-                  <img src="" alt="" class="skill__icon" />
+                  <img
+                    src="./assets/icons/html.svg"
+                    alt="HTML logo"
+                    class="skill__icon"
+                  />
                   <span class="skill__name">HTML & CSS</span>
                 </li>
                 <li class="skill">
-                  <img src="" alt="" class="skill__icon" />
+                  <img
+                    src="./assets/icons/javascript.svg"
+                    alt="JavaScript icon"
+                    class="skill__icon"
+                  />
                   <span class="skill__name">JavaScript</span>
                 </li>
                 <li class="skill">
@@ -179,6 +203,253 @@
           </ul>
         </div>
       </section>
+
+      <section class="projects-section" id="projects">
+        <div class="container">
+          <h2 class="section__title" data-spacing="large">Projets</h2>
+
+          <ul class="projects__list" role="list">
+            <li class="project">
+              <article class="card">
+                <figure class="card__banner">
+                  <img src="./assets/images/mobile.png" alt="" />
+                </figure>
+
+                <div class="card__content">
+                  <header class="card__header">
+                    <h3 class="card__title text-primary-gradient">
+                      Lorem ipsum.
+                    </h3>
+                  </header>
+                  <p class="card__description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Fugit omnis dolor suscipit, totam aliquam, quos nulla vero
+                    consequuntur eum reprehenderit.
+                  </p>
+                  <a href="#" class="card__button button">En savoir plus</a>
+                  <footer class="card__footer">
+                    <ul class="card__tags" role="list">
+                      <li class="card__tag tag" data-type="primary">Tag 1</li>
+                      <li class="card__tag tag" data-type="primary">Tag 2</li>
+                      <li class="card__tag tag" data-type="primary">Tag 3</li>
+                    </ul>
+                  </footer>
+                </div>
+              </article>
+            </li>
+
+            <li class="project">
+              <article class="card">
+                <figure class="card__banner">
+                  <img src="./assets/images/mobile.png" alt="" />
+                </figure>
+
+                <div class="card__content">
+                  <header class="card__header">
+                    <h3 class="card__title text-primary-gradient">
+                      Lorem ipsum.
+                    </h3>
+                  </header>
+                  <p class="card__description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Fugit omnis dolor suscipit, totam aliquam, quos nulla vero
+                    consequuntur eum reprehenderit.
+                  </p>
+                  <a href="#" class="card__button button">En savoir plus</a>
+                  <footer class="card__footer">
+                    <ul class="card__tags" role="list">
+                      <li class="card__tag tag" data-type="primary">
+                        <img
+                          src="./assets/icons/html.svg"
+                          alt="HTML logo"
+                          class="tag__icon"
+                        />
+                        <span class="tag__name">HTML</span>
+                      </li>
+                      <li class="card__tag tag" data-type="primary">Tag 2</li>
+                      <li class="card__tag tag" data-type="primary">Tag 3</li>
+                    </ul>
+                  </footer>
+                </div>
+              </article>
+            </li>
+
+            <li class="project">
+              <article class="card">
+                <figure class="card__banner">
+                  <img src="./assets/images/mobile.png" alt="" />
+                </figure>
+
+                <div class="card__content">
+                  <header class="card__header">
+                    <h3 class="card__title text-primary-gradient">
+                      Lorem ipsum.
+                    </h3>
+                  </header>
+                  <p class="card__description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Fugit omnis dolor suscipit, totam aliquam.
+                  </p>
+                  <a href="#" class="card__button button">En savoir plus</a>
+                  <footer class="card__footer">
+                    <ul class="card__tags" role="list">
+                      <li class="card__tag tag" data-type="primary">Tag 1</li>
+                      <li class="card__tag tag" data-type="primary">Tag 2</li>
+                      <li class="card__tag tag" data-type="primary">Tag 3</li>
+                    </ul>
+                  </footer>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div class="container">
+          <h2 class="section__title">Contact</h2>
+          <p class="section__subtitle">
+            N’hésitez pas à me contacter via mon formulaire de contact, mon
+            adresse mail ou mes divers réseaux sociaux.
+          </p>
+
+          <ul class="contact__list" role="list">
+            <li>
+              <a href="#" class="button" data-type="secondary">LinkedIn</a>
+            </li>
+            <li>
+              <a href="#" class="button" data-type="secondary"
+                >contact@johan-chereau.com</a
+              >
+            </li>
+            <li><a href="#" class="button" data-type="secondary">GitHub</a></li>
+          </ul>
+
+          <form class="contact__form" id="contact-form">
+            <div class="form__control">
+              <label for="name">Nom *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                maxlength="40"
+              />
+            </div>
+
+            <div class="form__control">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form__control">
+              <label for="subject">Objet *</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                required
+                maxlength="40"
+              />
+            </div>
+
+            <div class="form__control">
+              <label for="message">Message *</label>
+              <textarea
+                name="message"
+                id="message"
+                required
+                maxlength="1500"
+                minlength="20"
+              ></textarea>
+            </div>
+
+            <div class="form__control">
+              <input
+                type="checkbox"
+                name="privacy-policy"
+                id="privacy-policy"
+                required
+              />
+
+              <label for="privacy-policy"
+                >J'accepte la politique de confidentialité.</label
+              >
+            </div>
+
+            <button
+              role="button"
+              type="submit"
+              class="form__submit-button button"
+              data-type="primary"
+            >
+              Envoyer
+            </button>
+          </form>
+        </div>
+      </section>
     </main>
+
+    <footer>
+      <div class="container footer-wrapper">
+        <div class="footer__header">
+          <img
+            src="./assets/icons/johan-chereau-logo.svg"
+            alt="Johan Chereau logo"
+            class="logo__img"
+          />
+        </div>
+
+        <div class="footer__content">
+          <div class="footer__contact">
+            <h2 class="footer__title">Merci de votre visite.</h2>
+            <p class="footer__subtitle">Une question ? Une information ?</p>
+            <a href="#contact" class="button" data-type="primary"
+              >Me contacter</a
+            >
+          </div>
+
+          <ul class="footer__navigation" role="list">
+            <li>
+              <h3 class="footer__navigation-title">Site</h3>
+              <ul class="footer__navigation-links" role="list">
+                <li><a href="" class="footer__navigation-link">Accueil</a></li>
+                <li>
+                  <a href="" class="footer__navigation-link">Compétences</a>
+                </li>
+                <li><a href="" class="footer__navigation-link">Projets</a></li>
+                <li><a href="" class="footer__navigation-link">Contact</a></li>
+                <li><a href="" class="footer__navigation-link">Blog</a></li>
+              </ul>
+            </li>
+            <li>
+              <h3 class="footer__navigation-title">Contact</h3>
+              <ul class="footer__navigation-links" role="list">
+                <li><a href="" class="footer__navigation-link">LinkedIn</a></li>
+                <li><a href="" class="footer__navigation-link">GitHub</a></li>
+                <li>
+                  <a href="" class="footer__navigation-link"
+                    >Formulaire de contact</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <hr class="separator" />
+
+        <div class="footer__informations">
+          <p class="footer__credits">
+            © 2024 Johan Chereau. Tous droits réservés
+          </p>
+
+          <div class="footer__legal">
+            <a href="#">Mentions légales</a>
+            <a href="#">Politique de confidentialité</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

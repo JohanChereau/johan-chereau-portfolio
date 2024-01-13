@@ -16,4 +16,6 @@
 
 .logo__img {
   width: 35px;
+  pointer-events: none;
+  user-select: none;
 }

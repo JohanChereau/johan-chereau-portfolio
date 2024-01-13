@@ -1,9 +1,17 @@
-section:not(.hero-section) {
-  padding: 1rem 0;
+section:not(.hero-section, .skills-section) {
+  margin-block: 4em;
 }
-
 .section__title {
   text-align: center;
   font-size: var(--fs-800);
+}
+
+.section__title[data-spacing="large"] {
   margin-bottom: 1.2em;
+}
+
+.section__subtitle {
+  text-align: center;
+  font-weight: var(--fw-extra-light);
+  margin-block: 1.2em;
 }

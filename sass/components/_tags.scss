@@ -1,0 +1,29 @@
+// Default tag
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  max-width: max-content;
+
+  padding: 0.3em 1em;
+
+  border: none;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+
+  user-select: none;
+  pointer-events: none;
+}
+
+.tag__icon {
+  width: 30px;
+}
+
+// Primary
+
+.tag[data-type="primary"] {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-text-950);
+  transition: box-shadow 0.2s ease-out;
+}
