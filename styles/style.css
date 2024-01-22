@@ -784,6 +784,10 @@ textarea:focus {
   aspect-ratio: 1;
 }
 
+.form__control > input[type=checkbox]:focus {
+  outline: 2px solid var(--clr-primary-400);
+}
+
 .form__control > input[type=checkbox]:checked {
   accent-color: var(--clr-primary-400);
 }
