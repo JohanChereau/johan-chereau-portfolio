@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-particlesJS(
+const particles = particlesJS(
   "background-particles",
 
   {
@@ -115,3 +115,16 @@ particlesJS(
     },
   }
 );
+
+const particlesObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      pJSDom[0].pJS.particles.move.enable = true;
+      pJSDom[0].pJS.fn.particlesRefresh();
+    } else {
+      pJSDom[0].pJS.particles.move.enable = false;
+    }
+  });
+});
+
+particlesObserver.observe(document.querySelector("#background-particles"));

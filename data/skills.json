@@ -1,0 +1,102 @@
+[
+  {
+    "categoryTitle": "Design",
+    "skills": [
+      {
+        "title": "Figma",
+        "icon": "../assets/icons/figma.svg",
+        "width": "26px"
+      },
+      {
+        "title": "Adobe XD",
+        "icon": "../assets/icons/adobe-xd.svg",
+        "width": "30px"
+      },
+      {
+        "title": "Photoshop",
+        "icon": "../assets/icons/photoshop.svg",
+        "width": "28px"
+      }
+    ]
+  },
+  {
+    "categoryTitle": "Front-end",
+    "skills": [
+      {
+        "title": "HTML",
+        "icon": "../assets/icons/html.svg",
+        "width": "30px"
+      },
+      {
+        "title": "CSS",
+        "icon": "../assets/icons/css.svg",
+        "width": "30px"
+      },
+      {
+        "title": "JavaScript",
+        "icon": "../assets/icons/javascript.svg",
+        "width": "26px"
+      },
+      {
+        "title": "React",
+        "icon": "../assets/icons/react.svg",
+        "width": "30px"
+      },
+      {
+        "title": "Electron",
+        "icon": "../assets/icons/electron.svg",
+        "width": "30px"
+      },
+      {
+        "title": "SaSS",
+        "icon": "../assets/icons/sass.svg",
+        "width": "30px"
+      },
+      {
+        "title": "Tailwind CSS",
+        "icon": "../assets/icons/tailwind.svg",
+        "width": "30px"
+      }
+    ]
+  },
+  {
+    "categoryTitle": "Back-end",
+    "skills": [
+      {
+        "title": "NodeJs",
+        "icon": "../assets/icons/nodejs.svg",
+        "width": "30px"
+      },
+      {
+        "title": "Firebase",
+        "icon": "../assets/icons/firebase.svg",
+        "width": "30px"
+      },
+      {
+        "title": "Supabase",
+        "icon": "../assets/icons/supabase.svg",
+        "width": "28px"
+      }
+    ]
+  },
+  {
+    "categoryTitle": "Autres",
+    "skills": [
+      {
+        "title": "Git & GitHub",
+        "icon": "../assets/icons/github.svg",
+        "width": "28px"
+      },
+      {
+        "title": "Vitest",
+        "icon": "../assets/icons/vitest.svg",
+        "width": "30px"
+      },
+      {
+        "title": "VSCode",
+        "icon": "../assets/icons/vscode.svg",
+        "width": "26px"
+      }
+    ]
+  }
+]

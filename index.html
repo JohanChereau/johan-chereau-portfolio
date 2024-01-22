@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Johan Chereau | Portfolio</title>
+    <meta
+      name="description"
+      content="Bienvenue sur mon portfolio. Vous y trouverez mes derniers projets en développement web ainsi que mes divers moyens de contact."
+    />
     <link
       rel="shortcut icon"
       href="./assets/icons/johan-chereau-logo.svg"
@@ -14,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;700&family=Poppins:wght@200;300;400;500;700&display=swap"
       rel="stylesheet"
     />
 
@@ -22,10 +26,12 @@
     <link rel="stylesheet" href="./styles/style.css" />
 
     <!-- Scripts -->
+    <script src="./scripts/loadData.js" defer></script>
     <script src="./scripts/navigation.js" defer></script>
     <script src="./scripts/scrollTrigger.js" defer></script>
     <script src="./scripts/lib/particles.min.js" defer></script>
     <script src="./scripts/heroParticles.js" defer></script>
+    <script src="./scripts/contactForm.js" defer></script>
   </head>
 
   <body>
@@ -40,7 +46,7 @@
         <a href="#hero" class="logo" data-type="badge">
           <img
             src="./assets/icons/johan-chereau-logo.svg"
-            alt="Johan Chereau logo"
+            alt="Logo de Johan Chereau représentant un J et un C"
             class="logo__img"
           />
         </a>
@@ -73,7 +79,9 @@
             <li><a href="#skills">Compétences</a></li>
             <li><a href="#projects">Projets</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="#">Blog</a></li>
+            <li>
+              <a href="https://blog.johan-chereau.com" target="_blank">Blog</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -82,21 +90,62 @@
     <main>
       <section class="hero-section" id="hero">
         <div class="container hero-section-wrapper">
-          <h1 class="hero-section__title">
+          <h1
+            class="hero-section__title"
+            data-animated="false"
+            data-animation="opacity"
+          >
             Je suis <br />
             <span class="text-primary-gradient">JOHAN CHEREAU</span>
           </h1>
-          <p class="hero-section__subtitle">Développeur web front-end.</p>
+          <p
+            class="hero-section__subtitle"
+            data-animated="false"
+            data-animation="opacity"
+            style="--order: 2"
+          >
+            Développeur web front-end.
+          </p>
 
           <ul class="contact__list" role="list">
-            <li><a href="#" class="button" data-type="primary">LinkedIn</a></li>
-            <li>
-              <a href="#" class="button" data-type="primary"
+            <li data-animated="false" data-animation="left" style="--order: 3">
+              <a
+                href="https://fr.linkedin.com/in/johan-chereau"
+                target="_blank"
+                class="button"
+                data-type="primary"
+                >LinkedIn</a
+              >
+            </li>
+            <li data-animated="false" data-animation="left" style="--order: 2">
+              <a
+                href="mailto:contact@johan-chereau.com"
+                class="button"
+                data-type="primary"
                 >contact@johan-chereau.com</a
               >
             </li>
-            <li><a href="#" class="button" data-type="primary">GitHub</a></li>
+            <li data-animated="false" data-animation="left" style="--order: 1">
+              <a
+                href="https://github.com/JohanChereau"
+                target="_blank"
+                class="button"
+                data-type="primary"
+                >GitHub</a
+              >
+            </li>
           </ul>
+
+          <a href="#skills" class="hero-section__next-section-button">
+            <img
+              src="./assets/icons/arrow.svg"
+              alt="Icône avec une flèche vers le bas"
+              class="hero-section__next-section-button-icon"
+            />
+            <span class="sr-only"
+              >Naviguer à la section suivante : compétences</span
+            >
+          </a>
         </div>
       </section>
 
@@ -104,103 +153,9 @@
         <div class="container">
           <h2 class="section__title" data-spacing="large">Compétences</h2>
 
-          <ul class="skills__categories" role="list">
-            <li class="skills__category">
-              <h3 class="skills__category-title">Design</h3>
-
-              <ul class="skills__list" role="list">
-                <li class="skill">
-                  <img
-                    src="./assets/icons/figma.svg"
-                    alt="Figma logo"
-                    class="skill__icon"
-                  />
-                  <span class="skill__name">Figma</span>
-                </li>
-                <li class="skill">
-                  <img
-                    src="./assets/icons/adobe-xd.svg"
-                    alt="Adobe XD logo"
-                    class="skill__icon"
-                  />
-                  <span class="skill__name">Adobe XD</span>
-                </li>
-                <li class="skill">
-                  <img
-                    src="./assets/icons/photoshop.svg"
-                    alt="Photoshop logo"
-                    class="skill__icon"
-                  />
-                  <span class="skill__name">Photoshop</span>
-                </li>
-              </ul>
-            </li>
-
-            <li class="skills__category">
-              <h3 class="skills__category-title">Front-end</h3>
-
-              <ul class="skills__list" role="list">
-                <li class="skill">
-                  <img
-                    src="./assets/icons/html.svg"
-                    alt="HTML logo"
-                    class="skill__icon"
-                  />
-                  <span class="skill__name">HTML & CSS</span>
-                </li>
-                <li class="skill">
-                  <img
-                    src="./assets/icons/javascript.svg"
-                    alt="JavaScript icon"
-                    class="skill__icon"
-                  />
-                  <span class="skill__name">JavaScript</span>
-                </li>
-                <li class="skill">
-                  <img src="" alt="" class="skill__icon" />
-                  <span class="skill__name">ReactJS</span>
-                </li>
-              </ul>
-            </li>
-
-            <li class="skills__category">
-              <h3 class="skills__category-title">Back-end</h3>
-
-              <ul class="skills__list" role="list">
-                <li class="skill">
-                  <img src="" alt="" class="skill__icon" />
-                  <span class="skill__name">NodeJS</span>
-                </li>
-                <li class="skill">
-                  <img src="" alt="" class="skill__icon" />
-                  <span class="skill__name">Express</span>
-                </li>
-                <li class="skill">
-                  <img src="" alt="" class="skill__icon" />
-                  <span class="skill__name">Electron</span>
-                </li>
-              </ul>
-            </li>
-
-            <li class="skills__category">
-              <h3 class="skills__category-title">Autres</h3>
-
-              <ul class="skills__list" role="list">
-                <li class="skill">
-                  <img src="" alt="" class="skill__icon" />
-                  <span class="skill__name">Git & GitHub</span>
-                </li>
-                <li class="skill">
-                  <img src="" alt="" class="skill__icon" />
-                  <span class="skill__name">SaSS</span>
-                </li>
-                <li class="skill">
-                  <img src="" alt="" class="skill__icon" />
-                  <span class="skill__name">VSCode</span>
-                </li>
-              </ul>
-            </li>
-          </ul>
+          <div class="skills__wrapper">
+            <ul class="skills__categories" role="list"></ul>
+          </div>
         </div>
       </section>
 
@@ -208,100 +163,12 @@
         <div class="container">
           <h2 class="section__title" data-spacing="large">Projets</h2>
 
-          <ul class="projects__list" role="list">
-            <li class="project">
-              <article class="card">
-                <figure class="card__banner">
-                  <img src="./assets/images/mobile.png" alt="" />
-                </figure>
-
-                <div class="card__content">
-                  <header class="card__header">
-                    <h3 class="card__title text-primary-gradient">
-                      Lorem ipsum.
-                    </h3>
-                  </header>
-                  <p class="card__description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Fugit omnis dolor suscipit, totam aliquam, quos nulla vero
-                    consequuntur eum reprehenderit.
-                  </p>
-                  <a href="#" class="card__button button">En savoir plus</a>
-                  <footer class="card__footer">
-                    <ul class="card__tags" role="list">
-                      <li class="card__tag tag" data-type="primary">Tag 1</li>
-                      <li class="card__tag tag" data-type="primary">Tag 2</li>
-                      <li class="card__tag tag" data-type="primary">Tag 3</li>
-                    </ul>
-                  </footer>
-                </div>
-              </article>
-            </li>
-
-            <li class="project">
-              <article class="card">
-                <figure class="card__banner">
-                  <img src="./assets/images/mobile.png" alt="" />
-                </figure>
-
-                <div class="card__content">
-                  <header class="card__header">
-                    <h3 class="card__title text-primary-gradient">
-                      Lorem ipsum.
-                    </h3>
-                  </header>
-                  <p class="card__description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Fugit omnis dolor suscipit, totam aliquam, quos nulla vero
-                    consequuntur eum reprehenderit.
-                  </p>
-                  <a href="#" class="card__button button">En savoir plus</a>
-                  <footer class="card__footer">
-                    <ul class="card__tags" role="list">
-                      <li class="card__tag tag" data-type="primary">
-                        <img
-                          src="./assets/icons/html.svg"
-                          alt="HTML logo"
-                          class="tag__icon"
-                        />
-                        <span class="tag__name">HTML</span>
-                      </li>
-                      <li class="card__tag tag" data-type="primary">Tag 2</li>
-                      <li class="card__tag tag" data-type="primary">Tag 3</li>
-                    </ul>
-                  </footer>
-                </div>
-              </article>
-            </li>
-
-            <li class="project">
-              <article class="card">
-                <figure class="card__banner">
-                  <img src="./assets/images/mobile.png" alt="" />
-                </figure>
-
-                <div class="card__content">
-                  <header class="card__header">
-                    <h3 class="card__title text-primary-gradient">
-                      Lorem ipsum.
-                    </h3>
-                  </header>
-                  <p class="card__description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Fugit omnis dolor suscipit, totam aliquam.
-                  </p>
-                  <a href="#" class="card__button button">En savoir plus</a>
-                  <footer class="card__footer">
-                    <ul class="card__tags" role="list">
-                      <li class="card__tag tag" data-type="primary">Tag 1</li>
-                      <li class="card__tag tag" data-type="primary">Tag 2</li>
-                      <li class="card__tag tag" data-type="primary">Tag 3</li>
-                    </ul>
-                  </footer>
-                </div>
-              </article>
-            </li>
-          </ul>
+          <ul
+            class="projects__list"
+            role="list"
+            data-animated="false"
+            data-animation="left"
+          ></ul>
         </div>
       </section>
 
@@ -314,18 +181,46 @@
           </p>
 
           <ul class="contact__list" role="list">
-            <li>
-              <a href="#" class="button" data-type="secondary">LinkedIn</a>
+            <li data-animated="false" data-animation="left" style="--order: 3">
+              <a
+                href="https://fr.linkedin.com/in/johan-chereau"
+                target="_blank"
+                class="button"
+                data-type="secondary"
+                >LinkedIn</a
+              >
             </li>
-            <li>
-              <a href="#" class="button" data-type="secondary"
+            <li data-animated="false" data-animation="left" style="--order: 2">
+              <a
+                href="mailto:contact@johan-chereau.com"
+                class="button"
+                data-type="secondary"
                 >contact@johan-chereau.com</a
               >
             </li>
-            <li><a href="#" class="button" data-type="secondary">GitHub</a></li>
+            <li data-animated="false" data-animation="left" style="--order: 1">
+              <a
+                href="https://github.com/JohanChereau"
+                target="_blank"
+                class="button"
+                data-type="secondary"
+                >GitHub</a
+              >
+            </li>
           </ul>
 
-          <form class="contact__form" id="contact-form">
+          <form
+            class="contact__form"
+            id="contact-form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              value="17a32e99-4b01-4926-9ef2-27e20c51ce16"
+            />
+
             <div class="form__control">
               <label for="name">Nom *</label>
               <input
@@ -395,16 +290,35 @@
         <div class="footer__header">
           <img
             src="./assets/icons/johan-chereau-logo.svg"
-            alt="Johan Chereau logo"
+            alt="Logo de Johan Chereau représentant un J et un C"
             class="logo__img"
           />
         </div>
 
         <div class="footer__content">
           <div class="footer__contact">
-            <h2 class="footer__title">Merci de votre visite.</h2>
-            <p class="footer__subtitle">Une question ? Une information ?</p>
-            <a href="#contact" class="button" data-type="primary"
+            <h2
+              class="footer__title"
+              data-animated="false"
+              data-animation="opacity"
+            >
+              Merci de votre visite.
+            </h2>
+            <p
+              class="footer__subtitle"
+              data-animated="false"
+              data-animation="opacity"
+              style="--order: 2"
+            >
+              Une question ? Une information ?
+            </p>
+            <a
+              href="#contact"
+              class="button"
+              data-type="primary"
+              data-animated="false"
+              data-animation="left"
+              style="transition: 1s ease; --order: 3"
               >Me contacter</a
             >
           </div>
@@ -413,22 +327,53 @@
             <li>
               <h3 class="footer__navigation-title">Site</h3>
               <ul class="footer__navigation-links" role="list">
-                <li><a href="" class="footer__navigation-link">Accueil</a></li>
                 <li>
-                  <a href="" class="footer__navigation-link">Compétences</a>
+                  <a href="#hero" class="footer__navigation-link">Accueil</a>
                 </li>
-                <li><a href="" class="footer__navigation-link">Projets</a></li>
-                <li><a href="" class="footer__navigation-link">Contact</a></li>
-                <li><a href="" class="footer__navigation-link">Blog</a></li>
+                <li>
+                  <a href="#skills" class="footer__navigation-link"
+                    >Compétences</a
+                  >
+                </li>
+                <li>
+                  <a href="#projects" class="footer__navigation-link"
+                    >Projets</a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" class="footer__navigation-link">Contact</a>
+                </li>
+                <li>
+                  <a
+                    href="https://blog.johan-chereau.com"
+                    target="_blank"
+                    class="footer__navigation-link"
+                    >Blog</a
+                  >
+                </li>
               </ul>
             </li>
             <li>
               <h3 class="footer__navigation-title">Contact</h3>
               <ul class="footer__navigation-links" role="list">
-                <li><a href="" class="footer__navigation-link">LinkedIn</a></li>
-                <li><a href="" class="footer__navigation-link">GitHub</a></li>
                 <li>
-                  <a href="" class="footer__navigation-link"
+                  <a
+                    href="https://fr.linkedin.com/in/johan-chereau"
+                    target="_blank"
+                    class="footer__navigation-link"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/JohanChereau"
+                    target="_blank"
+                    class="footer__navigation-link"
+                    >GitHub</a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" class="footer__navigation-link"
                     >Formulaire de contact</a
                   >
                 </li>
@@ -441,12 +386,14 @@
 
         <div class="footer__informations">
           <p class="footer__credits">
-            © 2024 Johan Chereau. Tous droits réservés
+            &copy; 2024 Johan Chereau. Tous droits réservés
           </p>
 
           <div class="footer__legal">
-            <a href="#">Mentions légales</a>
-            <a href="#">Politique de confidentialité</a>
+            <a href="./pages/legal-information.html">Mentions légales</a>
+            <a href="./pages/privacy-policy.html"
+              >Politique de confidentialité</a
+            >
           </div>
         </div>
       </div>

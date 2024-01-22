@@ -1,3 +1,7 @@
+.hero-section {
+  position: relative;
+}
+
 .hero-section-wrapper {
   --hero-section-spacing: 1.2rem;
 
@@ -12,11 +16,46 @@
 }
 
 .hero-section__title {
-  font-size: var(--fs-900);
+  font-size: clamp(3rem, 8vw, 5rem);
   line-height: 1.2;
 }
 
 .hero-section__subtitle {
   font-size: var(--fs-800);
   font-weight: var(--fw-extra-light);
+}
+
+// View more icon
+.hero-section__next-section-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+
+  border: 1px solid var(--clr-text-50);
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.hero-section__next-section-button:is(:focus, :hover) {
+  border-color: var(--clr-primary-400);
+}
+
+.hero-section__next-section-button-icon {
+  width: clamp(2em, 2vw, 4em);
+  aspect-ratio: 1;
+
+  transition: all 0.2s ease;
+}
+
+.hero-section__next-section-button:is(:focus, :hover)
+  .hero-section__next-section-button-icon {
+  transform: translateY(4px);
 }

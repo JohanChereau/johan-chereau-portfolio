@@ -53,6 +53,7 @@ body > footer {
 .footer__navigation-title {
   font-size: var(--fs-600);
   margin-bottom: 0.3em;
+  font-weight: var(--fw-medium);
 }
 
 .footer__navigation-links {
@@ -76,7 +77,7 @@ body > footer {
   display: flex;
   flex-direction: column;
   gap: 0.7em;
-  color: var(--clr-text-600);
+  color: var(--clr-text-300);
   font-size: var(--fs-300);
 }
 
@@ -88,7 +89,7 @@ body > footer {
 
 .footer__legal > a {
   text-decoration: none;
-  color: var(--clr-text-600);
+  color: var(--clr-text-300);
 }
 
 .footer__legal > a:is(:focus, :hover) {
@@ -115,6 +116,10 @@ body > footer {
     flex-wrap: wrap;
   }
 
+  .footer__title {
+    line-height: 1;
+  }
+
   .footer__subtitle {
     margin: 0.5em 0;
   }
@@ -124,6 +129,8 @@ body > footer {
     flex-direction: row;
     justify-content: space-around;
     gap: 2em;
+
+    font-size: var(--fs-500);
   }
 
   .footer__contact {

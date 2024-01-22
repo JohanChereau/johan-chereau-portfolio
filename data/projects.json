@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Portfolio",
+    "description": "Mon portfolio actuel est une vitrine complète regroupant mes compétences et projets, avec toutes mes informations de contact. Conçu méticuleusement sur Figma, j'ai développé le design en utilisant HTML, CSS (avec SaSS), et JavaScript pour une expérience interactive et dynamique.",
+    "banner": {
+      "url": "../assets/images/portfolio-project.webp",
+      "alt": "Captures d'écran d'un smartphone montrant le portfolio de Johan Chereau"
+    },
+    "buttons": [{ "title": "En savoir plus", "link": "#" }],
+    "tags": [
+      { "title": "HTML", "icon": "../assets/icons/html.svg" },
+      { "title": "CSS", "icon": "../assets/icons/css.svg" },
+      { "title": "SaSS", "icon": "../assets/icons/sass.svg" },
+      { "title": "JavaScript", "icon": "../assets/icons/javascript.svg" },
+      { "title": "GitHub", "icon": "../assets/icons/github.svg" }
+    ]
+  },
+  {
+    "title": "Blog",
+    "description": "Mon blog personnel explore ma passion pour le développement avec NextJs 14. Il intègre un éditeur markdown pour des articles dans une base de données, offrant également une option d'abonnement mensuel via Stripe pour un accès exclusif.",
+    "banner": {
+      "url": "../assets/images/blog-project.webp",
+      "alt": "Captures d'écran d'une tablette montrant le blog personnel de Johan Chereau"
+    },
+    "buttons": [{ "title": "En savoir plus", "link": "#" }],
+    "tags": [
+      { "title": "NextJs", "icon": "../assets/icons/nextjs.svg" },
+      { "title": "Supabase", "icon": "../assets/icons/supabase.svg" },
+      { "title": "Tailwind CSS", "icon": "../assets/icons/tailwind.svg" },
+      { "title": "Stripe", "icon": "../assets/icons/stripe.svg" },
+      { "title": "GitHub", "icon": "../assets/icons/github.svg" }
+    ]
+  },
+  {
+    "title": "Snapsort",
+    "description": "Une application Windows open source pour trier et organiser les fichiers par année et mois en deux clics. Initialement créée pour automatiser le classement de photos de mon téléphone vers un disque dur externe. Réalisée en TypeScript avec Electron, React et SaSS, disponible sur GitHub.",
+    "banner": {
+      "url": "../assets/images/snapsort-project.webp",
+      "alt": "Capture d'écran d'un ordinateur portable montrant l'application Windows Snapsort lancée"
+    },
+    "buttons": [{ "title": "En savoir plus", "link": "#" }],
+    "tags": [
+      { "title": "Electron", "icon": "../assets/icons/electron.svg" },
+      { "title": "React", "icon": "../assets/icons/react.svg" },
+      { "title": "TypeScript", "icon": "../assets/icons/typescript.svg" },
+      { "title": "SaSS", "icon": "../assets/icons/sass.svg" },
+      { "title": "GSAP", "icon": "../assets/icons/gsap.svg" },
+      { "title": "GitHub", "icon": "../assets/icons/github.svg" }
+    ]
+  }
+]

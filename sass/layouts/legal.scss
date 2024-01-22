@@ -1,0 +1,16 @@
+.legal-section {
+  text-wrap: pretty;
+
+  .section__title {
+    margin-bottom: 1em;
+  }
+
+  h2 {
+    margin-block: 1.4em 0.2em;
+  }
+
+  a {
+    color: var(--clr-secondary-400);
+    font-weight: var(--fw-medium);
+  }
+}

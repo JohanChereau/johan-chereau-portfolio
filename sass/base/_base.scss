@@ -1,5 +1,9 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  --section-padding: 1.4em 0 3em 0;
+  --section-padding: 1em 0 1em 0;
 
   min-height: 100svh;
   font-family: var(--ff-default);

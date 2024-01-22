@@ -24,3 +24,6 @@ dist/
 
 # Ignore Sass cache
 .sass-cache/
+
+# Ignore templates
+/templates

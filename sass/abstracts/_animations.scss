@@ -1,0 +1,34 @@
+[data-animated] {
+  transition: opacity 1.6s, transform 1s;
+  transition-delay: calc(100ms * var(--order));
+}
+
+[data-animated="true"][data-animation="opacity"] {
+  opacity: 1;
+  transform: none;
+}
+
+[data-animated="false"][data-animation="opacity"] {
+  opacity: 0;
+  transform: none;
+}
+
+[data-animated="true"][data-animation="left"] {
+  opacity: 1;
+  transform: translateX(0);
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+
+[data-animated="false"][data-animation="left"] {
+  opacity: 0;
+  transform: translateX(-5vw);
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+}
+
+@media (prefers-reduced-motion) {
+  [data-animated] {
+    transition: none;
+  }
+}
