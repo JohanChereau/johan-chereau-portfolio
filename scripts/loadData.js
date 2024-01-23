@@ -121,6 +121,10 @@ function createProjectCard(data) {
   const cardImage = document.createElement("img");
   cardImage.src = data.banner.url;
   cardImage.alt = data.banner.alt;
+  // @ts-ignore
+  cardImage.fetchPriority = "low";
+  cardImage.width = 100;
+  cardImage.loading = "lazy";
   cardBanner.appendChild(cardImage);
   cardElement.appendChild(cardBanner);
 

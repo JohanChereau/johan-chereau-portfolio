@@ -400,6 +400,7 @@ h2 {
 
 .skill__icon {
   width: 36px;
+  aspect-ratio: 1;
   filter: invert(100%);
   user-select: none;
   pointer-events: none;
@@ -482,6 +483,7 @@ h2 {
 
 .logo__img {
   width: 35px;
+  aspect-ratio: 1;
   pointer-events: none;
   user-select: none;
 }
@@ -673,7 +675,10 @@ section:not(.hero-section, .skills-section) {
 
 .card__banner > img {
   width: 100%;
+  aspect-ratio: 16/12;
   object-fit: cover;
+  pointer-events: none;
+  user-select: none;
 }
 
 .card__header {
@@ -683,7 +688,7 @@ section:not(.hero-section, .skills-section) {
 .card__content {
   display: grid;
   grid-template-rows: auto 1fr auto auto;
-  padding: 0.4em 1em;
+  padding: 1em;
   gap: clamp(1.2em, 2vw, 1.8em);
   text-wrap: balance;
   text-align: center;
@@ -691,7 +696,7 @@ section:not(.hero-section, .skills-section) {
 }
 
 .card__title {
-  font-size: var(--fs-800);
+  font-size: var(--fs-700);
 }
 
 .card__description {
@@ -737,6 +742,7 @@ section:not(.hero-section, .skills-section) {
 
 .tag__icon {
   width: 1.2em;
+  aspect-ratio: 1;
 }
 
 .tag[data-type=primary] {
