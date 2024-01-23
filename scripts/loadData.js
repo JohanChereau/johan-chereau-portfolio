@@ -147,6 +147,7 @@ function createProjectCard(data) {
   for (const buttonData of data.buttons) {
     const buttonElement = document.createElement("a");
     buttonElement.href = buttonData.link;
+    buttonElement.target = "_blank";
     buttonElement.className = "card__button button";
     buttonElement.textContent = buttonData.title;
     cardContent.appendChild(buttonElement);

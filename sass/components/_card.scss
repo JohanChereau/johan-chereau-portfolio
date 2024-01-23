@@ -20,12 +20,16 @@
   object-fit: cover;
 }
 
+.card__header {
+  padding: 0;
+}
+
 .card__content {
   display: grid;
   grid-template-rows: auto 1fr auto auto;
-  padding: 1em;
+  padding: 0.4em 1em;
   gap: clamp(1.2em, 2vw, 1.8em);
-  text-wrap: pretty;
+  text-wrap: balance;
   text-align: center;
   line-height: 1.7;
 }

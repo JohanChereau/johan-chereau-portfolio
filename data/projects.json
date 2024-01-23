@@ -6,7 +6,12 @@
       "url": "../assets/images/portfolio-project.webp",
       "alt": "Captures d'écran d'un smartphone montrant le portfolio de Johan Chereau"
     },
-    "buttons": [{ "title": "En savoir plus", "link": "#" }],
+    "buttons": [
+      {
+        "title": "En savoir plus",
+        "link": "https://github.com/JohanChereau/johan-chereau-portfolio"
+      }
+    ],
     "tags": [
       { "title": "HTML", "icon": "../assets/icons/html.svg" },
       { "title": "CSS", "icon": "../assets/icons/css.svg" },
@@ -22,7 +27,9 @@
       "url": "../assets/images/blog-project.webp",
       "alt": "Captures d'écran d'une tablette montrant le blog personnel de Johan Chereau"
     },
-    "buttons": [{ "title": "En savoir plus", "link": "#" }],
+    "buttons": [
+      { "title": "En savoir plus", "link": "https://blog.johan-chereau.com" }
+    ],
     "tags": [
       { "title": "NextJs", "icon": "../assets/icons/nextjs.svg" },
       { "title": "Supabase", "icon": "../assets/icons/supabase.svg" },
@@ -38,7 +45,12 @@
       "url": "../assets/images/snapsort-project.webp",
       "alt": "Capture d'écran d'un ordinateur portable montrant l'application Windows Snapsort lancée"
     },
-    "buttons": [{ "title": "En savoir plus", "link": "#" }],
+    "buttons": [
+      {
+        "title": "En savoir plus",
+        "link": "https://snapsort.johan-chereau.com"
+      }
+    ],
     "tags": [
       { "title": "Electron", "icon": "../assets/icons/electron.svg" },
       { "title": "React", "icon": "../assets/icons/react.svg" },
