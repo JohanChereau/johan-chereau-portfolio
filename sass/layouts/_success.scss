@@ -1,0 +1,24 @@
+.success-section__wrapper {
+  text-align: center;
+  padding: clamp(1em, 5vw, 4em) 0;
+}
+
+.success-section__icon {
+  margin-inline: auto;
+  margin-bottom: 2em;
+  width: clamp(80px, 10vw, 110px);
+}
+
+.success-section__title {
+  margin-bottom: 0.8em;
+}
+
+.success-section__description {
+  max-width: 500px;
+  text-wrap: pretty;
+  margin-inline: auto;
+}
+
+.success-section__button {
+  margin-top: 1.2em;
+}

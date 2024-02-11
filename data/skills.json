@@ -5,17 +5,17 @@
       {
         "title": "Figma",
         "icon": "../assets/icons/figma.svg",
-        "width": "26px"
+        "width": "1.5em"
       },
       {
         "title": "Adobe XD",
         "icon": "../assets/icons/adobe-xd.svg",
-        "width": "30px"
+        "width": "1.6em"
       },
       {
         "title": "Photoshop",
         "icon": "../assets/icons/photoshop.svg",
-        "width": "28px"
+        "width": "1.45em"
       }
     ]
   },
@@ -25,37 +25,37 @@
       {
         "title": "HTML",
         "icon": "../assets/icons/html.svg",
-        "width": "30px"
+        "width": "1.6em"
       },
       {
         "title": "CSS",
         "icon": "../assets/icons/css.svg",
-        "width": "30px"
+        "width": "1.6em"
       },
       {
         "title": "JavaScript",
         "icon": "../assets/icons/javascript.svg",
-        "width": "26px"
+        "width": "1.4em"
       },
       {
         "title": "React",
         "icon": "../assets/icons/react.svg",
-        "width": "30px"
+        "width": "1.6em"
       },
       {
         "title": "Electron",
         "icon": "../assets/icons/electron.svg",
-        "width": "30px"
+        "width": "1.6em"
       },
       {
         "title": "SaSS",
         "icon": "../assets/icons/sass.svg",
-        "width": "30px"
+        "width": "1.6em"
       },
       {
         "title": "Tailwind CSS",
         "icon": "../assets/icons/tailwind.svg",
-        "width": "30px"
+        "width": "1.6em"
       }
     ]
   },
@@ -65,17 +65,17 @@
       {
         "title": "NodeJs",
         "icon": "../assets/icons/nodejs.svg",
-        "width": "30px"
+        "width": "1.6em"
       },
       {
         "title": "Firebase",
         "icon": "../assets/icons/firebase.svg",
-        "width": "30px"
+        "width": "1.6em"
       },
       {
         "title": "Supabase",
         "icon": "../assets/icons/supabase.svg",
-        "width": "28px"
+        "width": "1.5em"
       }
     ]
   },
@@ -85,17 +85,17 @@
       {
         "title": "Git & GitHub",
         "icon": "../assets/icons/github.svg",
-        "width": "28px"
+        "width": "1.5em"
       },
       {
         "title": "Vitest",
         "icon": "../assets/icons/vitest.svg",
-        "width": "30px"
+        "width": "1.6em"
       },
       {
         "title": "VSCode",
         "icon": "../assets/icons/vscode.svg",
-        "width": "26px"
+        "width": "1.45em"
       }
     ]
   }

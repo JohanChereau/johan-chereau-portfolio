@@ -89,7 +89,7 @@ function createSkill(data) {
   // Add the icon to the skill item
   const skillIcon = document.createElement("img");
   skillIcon.src = data.icon;
-  skillIcon.alt = `${data.title} logo`;
+  skillIcon.alt = `Icône de ${data.title}`;
   skillIcon.className = "skill__icon";
   skillIcon.style.width = data.width;
   data?.color ? (skillIcon.style.color = data?.color) : "";
@@ -171,7 +171,7 @@ function createProjectCard(data) {
     tagItem.setAttribute("data-type", "primary");
     const tagIcon = document.createElement("img");
     tagIcon.src = tagData.icon;
-    tagIcon.alt = `${tagData.title} logo`;
+    tagIcon.alt = `Icône de ${tagData.title}`;
     tagIcon.className = "tag__icon";
     tagItem.appendChild(tagIcon);
     const tagName = document.createElement("span");

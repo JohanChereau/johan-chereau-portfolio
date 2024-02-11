@@ -165,16 +165,28 @@ h6 {
   --fw-regular: 400;
   --fw-light: 300;
   --fw-extra-light: 200;
-  --fs-900: 2.8rem;
-  --fs-800: 2.2rem;
-  --fs-700: 1.8rem;
-  --fs-650: 1.65rem;
-  --fs-600: 1.5rem;
-  --fs-500: 1.1rem;
-  --fs-400: 1rem;
-  --fs-300: 0.9rem;
+  --fs-900: 2.1rem;
+  --fs-800: 1.8rem;
+  --fs-700: 1.6rem;
+  --fs-650: 1.2rem;
+  --fs-600: 1.3rem;
+  --fs-500: 1rem;
+  --fs-400: 0.9rem;
+  --fs-300: 0.8rem;
 }
 
+@media (min-width: 30em) {
+  :root {
+    --fs-900: 2.8rem;
+    --fs-800: 2.2rem;
+    --fs-700: 1.8rem;
+    --fs-650: 1.65rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1.1rem;
+    --fs-400: 1rem;
+    --fs-300: 0.9rem;
+  }
+}
 @media (min-width: 50em) {
   :root {
     --fs-900: 4.4rem;
@@ -316,7 +328,7 @@ h2 {
 }
 
 .hero-section__title-primary {
-  font-size: clamp(3.4rem, 8vw, 5rem);
+  font-size: clamp(2.8rem, 8vw, 5rem);
   line-height: 1.2;
 }
 
@@ -464,6 +476,31 @@ h2 {
 .legal-section a {
   color: var(--clr-secondary-400);
   font-weight: var(--fw-medium);
+}
+
+.success-section__wrapper {
+  text-align: center;
+  padding: clamp(1em, 5vw, 4em) 0;
+}
+
+.success-section__icon {
+  margin-inline: auto;
+  margin-bottom: 2em;
+  width: clamp(80px, 10vw, 110px);
+}
+
+.success-section__title {
+  margin-bottom: 0.8em;
+}
+
+.success-section__description {
+  max-width: 500px;
+  text-wrap: pretty;
+  margin-inline: auto;
+}
+
+.success-section__button {
+  margin-top: 1.2em;
 }
 
 .logo {
@@ -689,7 +726,7 @@ section:not(.hero-section, .skills-section) {
   display: grid;
   grid-template-rows: auto 1fr auto auto;
   padding: 1em;
-  gap: clamp(1.2em, 2vw, 1.8em);
+  gap: clamp(1em, 2vw, 1.4em);
   text-wrap: balance;
   text-align: center;
   line-height: 1.7;
@@ -789,12 +826,12 @@ textarea:focus {
   outline: none;
 }
 
-.form__control:nth-child(5) {
+.form__control:nth-child(6) {
   display: flex;
   flex-direction: column;
 }
 
-.form__control:nth-child(5) > label {
+.form__control:nth-child(6) > label {
   align-self: flex-start;
 }
 
@@ -803,7 +840,7 @@ textarea:focus {
   height: 6em;
 }
 
-.form__control:nth-child(6) {
+.form__control:nth-child(7) {
   grid-template-columns: max-content 1fr;
   grid-template-rows: auto;
   gap: 0.5em;
@@ -820,6 +857,11 @@ textarea:focus {
 
 .form__control > input[type=checkbox]:checked {
   accent-color: var(--clr-primary-400);
+}
+
+.form__infos-text {
+  color: var(--clr-text-400);
+  font-style: italic;
 }
 
 .contact__form .form__submit-button {
