@@ -1,106 +1,123 @@
+<div align="center">
+
+<img src="./public/brand/logo.svg" alt="Johan Chereau logo" width="88" />
+
 # Johan Chereau — Portfolio
 
-Bilingual personal portfolio built from scratch around a product-first presentation: selected work, case studies, professional experience, web/mobile/software capabilities and contact.
+**Software, Web & Mobile Developer**
+
+A modern bilingual portfolio focused on digital products, real-world use cases and selected work around EdTech, mobility and software development.
+
+[Live website](https://johan-chereau.com) ·
+[LinkedIn](https://www.linkedin.com/in/johan-chereau/) ·
+[GitHub](https://github.com/JohanChereau)
+
+<br />
+
+![Astro](https://img.shields.io/badge/Astro-7-BC52EE?style=flat-square&logo=astro&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-Workers-F38020?style=flat-square&logo=cloudflare&logoColor=white)
+![Lighthouse](https://img.shields.io/badge/Lighthouse-100%20%2F%20100%20%2F%20100%20%2F%20100-00C853?style=flat-square)
+
+</div>
+
+---
+
+## Overview
+
+This repository contains my personal developer portfolio.
+
+It was designed as more than a traditional résumé website: the goal is to present selected projects, product thinking and professional experience through a fast, accessible and visually polished experience.
+
+The portfolio is available in **French and English**, with a strong focus on responsive design, accessibility, performance and SEO.
+
+<p align="center">
+  <img src="./public/readme/desktop-home.webp" alt="Portfolio homepage preview" width="900" />
+</p>
+
+## Featured work
+
+The portfolio currently highlights two main projects:
+
+### CTCR Trainer
+
+An educational web application created from a real need encountered during professional transport training.
+
+### Cosmify
+
+A desktop application for managing and customizing Minecraft Bedrock skin packs, built around a modern product-oriented workflow.
+
+<p align="center">
+  <img src="./public/readme/desktop-projects.webp" alt="Featured projects preview" width="900" />
+</p>
+
+## Built for every screen
+
+The interface was designed mobile-first while keeping the desktop experience equally polished.
+
+<p align="center">
+  <img src="./public/readme/mobile.webp" alt="Mobile portfolio preview" width="720" />
+</p>
+
+## Highlights
+
+- French and English versions
+- Responsive and mobile-first design
+- Project case studies
+- Dark and light themes
+- Accessible interactions and reduced-motion support
+- SEO, Open Graph and structured data
+- Static generation with Astro
+- Automatic deployment through Cloudflare
+- Contact form powered by Web3Forms
 
 ## Stack
 
-- Astro 7, static-first
-- TypeScript
-- Tailwind CSS 4 through the Vite plugin
-- MDX + Astro Content Collections
-- React renderer used only at build time for `tech-stack-icons` SVG components — no client-side React hydration
-- Tech Stack Icons for the technology/design marks
-- Explicit `/fr/` and `/en/` routes
-- Sitemap, `robots.txt`, `llms.txt`, canonical URLs and `hreflang`
-- JSON-LD structured data for the person, website and project pages
+The portfolio is mainly built with **Astro, TypeScript and Tailwind CSS**, with MDX content collections for project case studies.
+
+Interactive behavior is deliberately kept lightweight to preserve performance and accessibility.
+
+## Performance
+
+The production website currently reaches **100 / 100 / 100 / 100** on Lighthouse for:
+
+- Performance
+- Accessibility
+- Best Practices
+- SEO
 
 ## Development
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
-Then open `http://localhost:4321`.
+Create a local `.env` file if you want the contact form to work:
+
+```env
+PUBLIC_WEB3FORMS_KEY=
+```
 
 Production build:
 
 ```bash
-npm run build
-npm run preview
+pnpm build
 ```
 
-## Contact form
+## Deployment
 
-Copy `.env.example` to `.env` and provide a Web3Forms access key:
+The website is automatically built and deployed from GitHub using **Cloudflare Workers & Static Assets**.
 
-```bash
-PUBLIC_WEB3FORMS_KEY=your_key
-```
+Production:
 
-If the key is absent, the form falls back to a `mailto:` message targeting `contact@johan-chereau.com` rather than exposing a form key in the repository.
+**https://johan-chereau.com**
 
-## Projects & i18n
+---
 
-Case studies live in:
+<div align="center">
 
-```text
-src/content/projects/
-├── fr/
-│   ├── ctcr-trainer.mdx
-│   └── cosmify.mdx
-└── en/
-    ├── ctcr-trainer.mdx
-    └── cosmify.mdx
-```
+Designed & developed by **Johan Chereau**
 
-Each entry has a `projectId` used for its public URL. **Do not rename this field to `slug`.** Astro's `glob()` content loader treats frontmatter `slug` as the content entry ID; using the same slug for FR and EN therefore creates a duplicate ID. The localized files instead keep unique collection IDs (`fr/...`, `en/...`) while deliberately sharing the same `projectId` route segment.
-
-Current featured work:
-
-- **CTCR Trainer** — EdTech / web application
-- **Cosmify** — desktop product
-
-The project detail design intentionally keeps the portfolio-native CSS product mockups and adds a separate gallery of real product captures. The transparent WebP masters live under `public/projects/<projectId>/`, so the portfolio can compose them on its own dark/light surfaces without baking a marketing background into the image.
-
-Project metadata also owns external links (`links.github` and optional `links.live`), which are rendered as primary actions in the case-study hero and reused in structured data.
-
-## Experience
-
-The homepage highlights three complementary software/product contexts:
-
-- **SNCF** — autonomous development of internal mechanical sizing tools for railway axles, directly with end users;
-- **Dotscreen** — maintenance and evolution of RTBF Auvio across Smart TV, PS4, PS5 and Web as part of a team;
-- **Dawan** — collaborative product design for an internal process-mapping solution, including research, wireframes, Figma prototypes and drag-and-drop editor concepts.
-
-The Auvio scale badge references a RTBF 2022 publication documenting more than four million active accounts.
-
-## SEO & discoverability
-
-The project includes:
-
-- localized titles and descriptions;
-- canonical URLs and FR/EN `hreflang` links;
-- OpenGraph and Twitter metadata;
-- project-specific 1200×630 social cards;
-- sitemap generation;
-- `robots.txt`;
-- `llms.txt` + `llms-full.txt` with canonical project/context links;
-- Person, WebSite, WebPage, SoftwareApplication and BreadcrumbList structured data;
-- semantic HTML and a no-index 404 page.
-
-## Accessibility & performance
-
-- static HTML by default;
-- no app-wide hydration and no client React runtime for the icon grid;
-- keyboard focus states and skip link;
-- subtle IntersectionObserver reveal motion with a no-JS/reduced-motion safe fallback;
-- accessible form labels and decorative mockups kept out of the accessibility tree;
-- responsive layouts from mobile to large desktop;
-- local brand assets for Johan, SNCF, Dotscreen and Dawan;
-- SVG + PNG favicons, Apple touch icon and web app manifest;
-- dark and light themes with dedicated accent contrast.
-
-## Design direction
-
-Dark-first, technical and slightly spatial, with a restrained iridescent accent. The current hero intentionally uses the SVG logo without Three.js because it already works well visually; a 3D variant can be tested later as an optional enhancement rather than a dependency of the design.
+</div>
