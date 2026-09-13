@@ -1,0 +1,65 @@
+---
+title: Cosmify
+projectId: cosmify
+locale: fr
+description: Une application desktop moderne pour importer, comprendre, modifier, sauvegarder et restaurer des packs Minecraft Bedrock.
+year: 2026
+category: Application desktop
+featured: true
+order: 2
+accent: violet
+technologies:
+  - React
+  - TypeScript
+  - Tauri
+  - Vite
+  - Vitest
+links:
+  github: https://github.com/JohanChereau/cosmify
+gallery:
+  - src: /projects/cosmify/cosmify_0_desktop_home_page.webp
+    alt: Écran d’accueil de Cosmify dans une fenêtre desktop
+    caption: Accueil et bibliothèque locale
+    width: 1920
+    height: 1440
+  - src: /projects/cosmify/cosmify_0_desktop_cosmetics_page.webp
+    alt: Page de gestion des cosmétiques de Cosmify
+    caption: Gestion des cosmétiques
+    width: 1920
+    height: 1440
+  - src: /projects/cosmify/cosmify_0_desktop_settings_page.webp
+    alt: Page des paramètres de Cosmify
+    caption: Paramètres de l’application
+    width: 1920
+    height: 1440
+---
+## Le contexte
+
+Cosmify part d'un problème très concret : personnaliser des packs Minecraft Bedrock peut rapidement devenir fragile, opaque et pénible à maintenir. Entre les manifests, les définitions de skins, les géométries, les backups et les fichiers à restaurer, une simple modification peut vite tourner à la chasse au fichier cassé.
+
+L'objectif n'était donc pas de construire une simple interface autour d'un dossier, mais un **vrai produit desktop** capable de rendre ce workflow compréhensible et réversible.
+
+## Le produit
+
+Cosmify permet d'importer un pack hôte, d'en extraire les informations utiles, de gérer les skins et leurs ressources, puis de restaurer proprement une configuration grâce à des sauvegardes automatiques.
+
+Le principe de conception central est simple : **une action risquée doit rester compréhensible, traçable et récupérable**.
+
+### Parmi les fonctionnalités
+
+- import et analyse de packs ;
+- lecture des manifests et des fichiers de configuration ;
+- gestion des skins et géométries ;
+- création et restauration de backups ;
+- journal d'activité ;
+- workflow de release et tests automatisés.
+
+## Architecture technique
+
+L'interface est construite avec React et TypeScript. Tauri fournit la couche desktop et l'accès aux fonctionnalités natives, avec Rust côté socle.
+
+Cette séparation permet de garder une interface web moderne tout en travaillant proprement avec le système de fichiers local.
+
+## Un produit desktop de bout en bout
+
+Cosmify combine interface, manipulation de fichiers locaux, parsing de données, sauvegardes, restauration, journalisation, tests et workflow de release. Le projet va donc bien au-delà d'une simple interface web emballée dans une fenêtre desktop.

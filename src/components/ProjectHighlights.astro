@@ -1,0 +1,41 @@
+---
+import type { Locale } from '../config';
+
+const { locale, kind } = Astro.props as { locale: Locale; kind: 'cosmify' | 'ctcr-trainer' };
+
+const items = kind === 'ctcr-trainer'
+  ? (locale === 'fr'
+    ? [
+        ['01', 'Cours + quiz', 'Passer rapidement de la compréhension à la pratique.'],
+        ['02', 'Entraînement + examen', "Deux modes pour réviser ou se mettre en conditions."],
+        ['03', 'Calculs professionnels', 'Des exercices dédiés aux situations métier.'],
+      ]
+    : [
+        ['01', 'Lessons + quizzes', 'Move quickly from understanding to practice.'],
+        ['02', 'Training + exam', 'Two modes for revision or exam-style practice.'],
+        ['03', 'Professional calculations', 'Dedicated exercises for real training topics.'],
+      ])
+  : (locale === 'fr'
+    ? [
+        ['01', 'Import & analyse', 'Comprendre la structure du pack avant de le modifier.'],
+        ['02', 'Backups automatiques', 'Restaurer proprement une configuration en cas de problème.'],
+        ['03', "Journal d'activité", 'Garder une trace claire des opérations effectuées.'],
+      ]
+    : [
+        ['01', 'Import & analysis', 'Understand the pack structure before changing it.'],
+        ['02', 'Automatic backups', 'Restore a configuration cleanly if something goes wrong.'],
+        ['03', 'Activity log', 'Keep a clear trace of the operations performed.'],
+      ]);
+---
+<div class="project-highlights">
+  {items.map(([index, title, body]) => (
+    <article>
+      <span>{index}</span>
+      <div class="highlight-visual" aria-hidden="true">
+        <i></i><i></i><i></i>
+      </div>
+      <h3>{title}</h3>
+      <p>{body}</p>
+    </article>
+  ))}
+</div>

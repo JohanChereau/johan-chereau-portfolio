@@ -1,0 +1,37 @@
+# Johan Chereau — Portfolio
+
+> Johan Chereau is a software, web and mobile developer based in France. He designs and builds digital products across web, mobile-oriented experiences, desktop software and professional tools, with a particular interest in EdTech and mobility.
+
+## Main pages
+
+- French homepage: https://johan-chereau.com/fr/
+- English homepage: https://johan-chereau.com/en/
+- French projects: https://johan-chereau.com/fr/projects/
+- English projects: https://johan-chereau.com/en/projects/
+
+## Featured projects
+
+- CTCR Trainer: https://johan-chereau.com/fr/projects/ctcr-trainer/
+  - EdTech web application created from a real professional training need.
+  - Lessons, quizzes, training and exam modes, professional calculations.
+  - Live product: https://tp-ctcr-trainer.vercel.app/
+  - Source: https://github.com/JohanChereau/tp-ctcr-trainer
+- Cosmify: https://johan-chereau.com/fr/projects/cosmify/
+  - Desktop application for importing, understanding, editing, backing up and restoring Minecraft Bedrock packs.
+  - React, TypeScript and Tauri.
+  - Source: https://github.com/JohanChereau/cosmify
+
+## Professional profile
+
+- Main focus: product-oriented software, web and mobile development.
+- Interests: EdTech, mobility, professional tools, interface design and interactive experiences.
+- Professional development/product experience: SNCF, Dotscreen and Dawan.
+- Additional professional qualification: professional public transport / coach driver (CTCR).
+
+## Contact and profiles
+
+- Email: contact@johan-chereau.com
+- GitHub: https://github.com/JohanChereau
+- LinkedIn: https://fr.linkedin.com/in/johan-chereau
+
+For human-readable context and project details, prefer the canonical French or English pages above.

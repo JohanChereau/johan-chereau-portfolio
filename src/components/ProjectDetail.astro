@@ -1,0 +1,108 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { siteConfig, type Locale } from '../config';
+import { t } from '../i18n';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import ProjectVisual from './ProjectVisual.astro';
+import ProjectHighlights from './ProjectHighlights.astro';
+import ProjectShowcase from './ProjectShowcase.astro';
+import ProjectGallery from './ProjectGallery.astro';
+
+const { locale, project, Content } = Astro.props as {
+  locale: Locale;
+  project: CollectionEntry<'projects'>;
+  Content: any;
+};
+const copy = t(locale);
+const kind = project.data.projectId === 'cosmify' ? 'cosmify' : 'ctcr-trainer';
+const canonicalPath = `/${locale}/projects/${project.data.projectId}/`;
+const externalLinks = [project.data.links?.live, project.data.links?.github].filter(Boolean);
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: project.data.title,
+  description: project.data.description,
+  url: new URL(canonicalPath, siteConfig.url).toString(),
+  author: { '@type': 'Person', name: siteConfig.name, url: siteConfig.url },
+  applicationCategory: project.data.category,
+  dateCreated: String(project.data.year),
+  inLanguage: locale,
+  isAccessibleForFree: true,
+  ...(project.data.links?.github ? { codeRepository: project.data.links.github } : {}),
+  ...(project.data.gallery.length ? { screenshot: project.data.gallery.map((item) => new URL(item.src, siteConfig.url).toString()) } : {}),
+  ...(externalLinks.length ? { sameAs: externalLinks } : {}),
+};
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: locale === 'fr' ? 'Accueil' : 'Home', item: new URL(`/${locale}/`, siteConfig.url).toString() },
+    { '@type': 'ListItem', position: 2, name: locale === 'fr' ? 'Projets' : 'Projects', item: new URL(`/${locale}/projects/`, siteConfig.url).toString() },
+    { '@type': 'ListItem', position: 3, name: project.data.title, item: new URL(canonicalPath, siteConfig.url).toString() },
+  ],
+};
+---
+<BaseLayout
+  locale={locale}
+  title={project.data.title}
+  description={project.data.description}
+  canonicalPath={canonicalPath}
+  image={`/brand/og-${project.data.projectId}.png`}
+  imageAlt={`${project.data.title} — ${locale === 'fr' ? 'projet de Johan Chereau' : 'project by Johan Chereau'}`}
+  schema={[softwareSchema, breadcrumbSchema]}
+>
+  <Header locale={locale} />
+  <main id="main" class="project-detail">
+    <section class="shell project-hero section-pad">
+      <a class="back-link" href={`/${locale}/projects/`}>← {copy.project.back}</a>
+      <div class="project-detail-grid">
+        <div>
+          <p class="eyebrow">{project.data.category} · {project.data.year}</p>
+          <h1>{project.data.title}</h1>
+          <p class="project-lead">{project.data.description}</p>
+          <div class="project-detail-tags">{project.data.technologies.map((tech) => <span>{tech}</span>)}</div>
+          {(project.data.links?.live || project.data.links?.github) && (
+            <div class="project-external-actions" aria-label={copy.project.links}>
+              {project.data.links?.live && (
+                <a class="button primary" href={project.data.links.live} target="_blank" rel="noreferrer">
+                  {copy.project.live}<span aria-hidden="true">↗</span>
+                </a>
+              )}
+              {project.data.links?.github && (
+                <a class:list={['button', project.data.links?.live ? 'secondary' : 'primary']} href={project.data.links.github} target="_blank" rel="noreferrer">
+                  {copy.project.github}<span aria-hidden="true">↗</span>
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+        <ProjectVisual kind={kind} locale={locale} />
+      </div>
+    </section>
+
+    <section class="shell project-highlights-wrap" data-reveal>
+      <ProjectHighlights locale={locale} kind={kind} />
+    </section>
+
+    <section class="shell project-showcase-wrap" data-reveal>
+      <div class="showcase-heading"><p class="eyebrow">{copy.project.preview}</p></div>
+      <ProjectShowcase locale={locale} kind={kind} />
+    </section>
+
+    <section class="shell project-content-wrap" data-reveal>
+      <aside class="project-sidebar">
+        <span>{copy.project.context}</span>
+        <strong>{project.data.title}</strong>
+        <hr />
+        <span>{copy.project.stack}</span>
+        <p>{project.data.technologies.join(' · ')}</p>
+      </aside>
+      <article class="prose"><Content /></article>
+    </section>
+
+    <ProjectGallery items={project.data.gallery} title={copy.project.gallery} accent={project.data.accent} />
+  </main>
+  <Footer locale={locale} />
+</BaseLayout>

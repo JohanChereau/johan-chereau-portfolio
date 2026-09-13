@@ -1,0 +1,40 @@
+# Johan Chereau
+
+Johan Chereau is a French software developer focused on creating clear, useful digital products across web, desktop and mobile-oriented experiences.
+
+His work is deliberately generalist, while he has a particular interest in educational technology, mobility and professional-use tools. His background combines application design and development with a professional qualification as a public transport and coach driver. The transport background is a second professional field rather than a replacement for software development.
+
+## CTCR Trainer
+
+CTCR Trainer is an EdTech web application created during professional CTCR training. It brings together learning content, quizzes, training and exam modes, error retry workflows and professional calculation exercises. The project exists because of a real learning need encountered during training.
+
+French: https://johan-chereau.com/fr/projects/ctcr-trainer/
+English: https://johan-chereau.com/en/projects/ctcr-trainer/
+Live product: https://tp-ctcr-trainer.vercel.app/
+Source: https://github.com/JohanChereau/tp-ctcr-trainer
+
+## Cosmify
+
+Cosmify is a desktop application for working with Minecraft Bedrock packs. It focuses on importing and understanding pack structures, managing skins and geometry resources, automatic backups, restoration and activity tracking. Its interface uses React and TypeScript, with Tauri providing the desktop layer.
+
+French: https://johan-chereau.com/fr/projects/cosmify/
+English: https://johan-chereau.com/en/projects/cosmify/
+Source: https://github.com/JohanChereau/cosmify
+
+## Technology
+
+The portfolio highlights a focused set of technologies that represent Johan's work: TypeScript, React, Node.js, Kotlin, Spring Boot, PostgreSQL, Supabase, Git, Three.js and Tauri. React Native is an area he wants to deepen for mobile development rather than a claimed current specialty.
+
+Johan also works around interface design and image creation, with broader interests in video and music. The creative tools highlighted on the portfolio are Figma, Photoshop and Inkscape.
+
+## Experience
+
+- SNCF — Centre d’ingénierie du matériel: autonomous design and development of internal mechanical sizing tools for railway axles, working directly with end users to frame needs, present progress and improve the solution.
+- Dotscreen: maintenance and evolution of RTBF Auvio across Smart TV, PlayStation 4, PlayStation 5 and Web as part of a team. RTBF documentation from 2022 reports more than four million active Auvio accounts. Source: https://ds1.static.rtbf.be/article/pdf/bilan-2022-mediation-et-relation-avec-les-publics-1-1699610178.pdf
+- Dawan: product-design work in a four-person team for an internal business-process mapping solution, including market/solution research, wireframes, Figma mockups and prototypes, and an intuitive drag-and-drop editor concept.
+
+## Contact
+
+Email: contact@johan-chereau.com
+GitHub: https://github.com/JohanChereau
+LinkedIn: https://fr.linkedin.com/in/johan-chereau

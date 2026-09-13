@@ -1,0 +1,38 @@
+---
+interface GalleryItem {
+  src: string;
+  alt: string;
+  caption?: string;
+  width?: number;
+  height?: number;
+}
+const { items, title, accent = 'cyan' } = Astro.props as {
+  items: GalleryItem[];
+  title: string;
+  accent?: 'cyan' | 'violet';
+};
+---
+{items.length > 0 && (
+  <section class:list={['shell project-gallery-wrap', `project-gallery-${accent}`]} aria-labelledby="project-gallery-title">
+    <div class="showcase-heading" data-reveal>
+      <p class="eyebrow" id="project-gallery-title">{title}</p>
+    </div>
+    <div class:list={['project-gallery', items.length === 1 && 'project-gallery-single']}>
+      {items.map((item, index) => (
+        <figure class:list={[index === 0 && 'project-gallery-featured']} data-reveal style={`--reveal-delay:${Math.min(index * 45, 135)}ms`}>
+          <div class="project-gallery-media">
+            <img
+              src={item.src}
+              alt={item.alt}
+              width={item.width}
+              height={item.height}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          {item.caption && <figcaption>{item.caption}</figcaption>}
+        </figure>
+      ))}
+    </div>
+  </section>
+)}

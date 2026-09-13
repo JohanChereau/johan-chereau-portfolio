@@ -1,0 +1,35 @@
+---
+import type { Locale } from '../config';
+const { kind, locale = 'fr' } = Astro.props as { kind: 'cosmify' | 'ctcr-trainer'; locale?: Locale };
+---
+{kind === 'cosmify' ? (
+  <div class="project-visual cosmify-visual" aria-hidden="true">
+    <div class="mock-window">
+      <div class="mock-top"><i></i><i></i><i></i><span>Cosmify</span></div>
+      <div class="mock-body cosmify-ui">
+        <div class="mock-sidebar">
+          <b>PACKS</b>
+          <span class="active"></span><span></span><span></span><span></span>
+        </div>
+        <div class="mock-main">
+          <div class="mock-toolbar"><span></span><span></span></div>
+          <div class="pack-grid">
+            <div><i></i><b>Camo Style</b><small>248 skins</small></div>
+            <div><i></i><b>Midnight</b><small>112 skins</small></div>
+            <div><i></i><b>Archive</b><small>Backup</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+) : (
+  <div class="project-visual ctcr-visual" aria-hidden="true">
+    <div class="trainer-phone">
+      <div class="trainer-head"><span>CTCR Trainer</span><i></i></div>
+      <div class="trainer-progress"><small>{locale === 'fr' ? 'MISSION DU JOUR' : 'DAILY MISSION'}</small><b>{locale === 'fr' ? 'Réglementation sociale' : 'Social regulations'}</b><div><i></i></div></div>
+      <div class="trainer-question"><small>QUESTION 08 / 20</small><b>{locale === 'fr' ? 'Après 4 h 30 de conduite continue...' : 'After 4 h 30 of continuous driving...'}</b><span class="answer active">45 min</span><span class="answer">30 min</span><span class="answer">15 min</span></div>
+    </div>
+    <div class="trainer-orbit one">Quiz</div>
+    <div class="trainer-orbit two">{locale === 'fr' ? 'Cours' : 'Lessons'}</div>
+  </div>
+)}

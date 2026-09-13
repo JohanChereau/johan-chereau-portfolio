@@ -1,0 +1,137 @@
+---
+import type { Locale } from '../config';
+
+const { locale } = Astro.props as { locale: Locale };
+
+const experiences =
+  locale === 'fr'
+    ? [
+        {
+          index: '01',
+          company: 'SNCF',
+          logo: '/brand/experience/sncf.svg',
+          logoClass: 'experience-logo-sncf',
+          kicker: 'Autonomie · Ingénierie ferroviaire',
+          title: 'Outils internes de dimensionnement mécanique',
+          body: 'Conception et développement en autonomie d’outils internes de dimensionnement pour les axes ferroviaires. Des calculs liés aux charges, vitesses et conditions d’exploitation, sur un sujet directement associé à la fiabilité et à la sécurité ferroviaire.',
+          tags: ['Autonomie', 'Ingénierie', 'Utilisateurs finaux'],
+        },
+        {
+          index: '02',
+          company: 'Dotscreen',
+          logo: '/brand/experience/dotscreen.svg',
+          logoClass: 'experience-logo-dotscreen',
+          kicker: 'Équipe produit · Multi-écrans',
+          title: 'RTBF Auvio sur Smart TV, PlayStation & Web',
+          body: 'Maintenance et évolution d’Auvio RTBF au sein d’une équipe, sur Smart TV, PlayStation 4, PlayStation 5 et Web. Une expérience sur un produit de streaming multi-écrans utilisé à grande échelle.',
+          tags: ['Smart TV', 'PS4 / PS5', 'Web'],
+          metric: '4M+ comptes Auvio',
+          metricSource:
+            'https://ds1.static.rtbf.be/article/pdf/bilan-2022-mediation-et-relation-avec-les-publics-1-1699610178.pdf',
+        },
+        {
+          index: '03',
+          company: 'Dawan',
+          logo: '/brand/experience/dawan.svg',
+          logoClass: 'experience-logo-dawan',
+          kicker: 'Product design · Équipe de 4',
+          title: 'Cartographier les processus internes',
+          body: 'Conception en équipe, sans développement, d’une solution web destinée à cartographier les processus internes de l’entreprise. Recherche, parcours utilisateurs, wireframes, maquettes et prototypes Figma autour d’un éditeur drag-and-drop.',
+          tags: ['Product design', 'UX / UI', 'Figma'],
+        },
+      ]
+    : [
+        {
+          index: '01',
+          company: 'SNCF',
+          logo: '/brand/experience/sncf.svg',
+          logoClass: 'experience-logo-sncf',
+          kicker: 'Autonomy · Railway engineering',
+          title: 'Internal mechanical sizing tools',
+          body: 'Independently designed and developed internal sizing tools for railway axles. The calculations covered loads, speeds and operating conditions in a field directly tied to railway reliability and safety.',
+          tags: ['Autonomy', 'Engineering', 'End users'],
+        },
+        {
+          index: '02',
+          company: 'Dotscreen',
+          logo: '/brand/experience/dotscreen.svg',
+          logoClass: 'experience-logo-dotscreen',
+          kicker: 'Product team · Multi-screen',
+          title: 'RTBF Auvio on Smart TV, PlayStation & Web',
+          body: 'Maintained and improved RTBF Auvio as part of a team across Smart TV, PlayStation 4, PlayStation 5 and Web. Hands-on experience with a large-scale multi-screen streaming product.',
+          tags: ['Smart TV', 'PS4 / PS5', 'Web'],
+          metric: '4M+ Auvio accounts',
+          metricSource:
+            'https://ds1.static.rtbf.be/article/pdf/bilan-2022-mediation-et-relation-avec-les-publics-1-1699610178.pdf',
+        },
+        {
+          index: '03',
+          company: 'Dawan',
+          logo: '/brand/experience/dawan.svg',
+          logoClass: 'experience-logo-dawan',
+          kicker: 'Product design · Team of 4',
+          title: 'Mapping internal business processes',
+          body: 'Designed, without development, a web solution for mapping internal company processes as part of a four-person team. Research, user flows, wireframes, UI mockups and Figma prototypes around a drag-and-drop editor.',
+          tags: ['Product design', 'UX / UI', 'Figma'],
+        },
+      ];
+---
+
+<div
+  class="experience-grid"
+  aria-label={
+    locale === 'fr'
+      ? 'Expériences professionnelles en développement'
+      : 'Professional development experience'
+  }
+>
+  {
+    experiences.map((item, index) => (
+      <article
+        class="experience-card"
+        data-reveal
+        style={`--reveal-delay:${Math.min(index * 55, 110)}ms`}
+      >
+        <div class="experience-card-top">
+          <span class="experience-index">{item.index}</span>
+
+          {item.metric && item.metricSource && (
+            <a
+              class="experience-metric"
+              href={item.metricSource}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${item.metric} — ${
+                locale === 'fr' ? 'source RTBF 2022' : 'RTBF 2022 source'
+              }`}
+            >
+              {item.metric}
+              <span aria-hidden="true">↗</span>
+            </a>
+          )}
+        </div>
+
+        <div class="experience-brand" aria-label={item.company}>
+          <div class="experience-logo-wrap">
+            <img
+              class:list={['experience-logo', item.logoClass]}
+              src={item.logo}
+              alt={item.company}
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <p class="experience-kicker">{item.kicker}</p>
+
+        <h3>{item.title}</h3>
+
+        <p class="experience-body">{item.body}</p>
+
+        <ul class="experience-tags" role="list">
+          {item.tags.map((tag) => <li>{tag}</li>)}
+        </ul>
+      </article>
+    ))
+  }
+</div>

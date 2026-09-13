@@ -1,0 +1,172 @@
+---
+import '../styles/global.css';
+import { siteConfig, type Locale } from '../config';
+
+interface Props {
+  locale: Locale;
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  image?: string;
+  imageAlt?: string;
+  schema?: Record<string, unknown> | Array<Record<string, unknown>>;
+  noindex?: boolean;
+}
+
+const {
+  locale,
+  title,
+  description = locale === 'fr'
+    ? "Portfolio de Johan Chereau, développeur logiciel, web et mobile en Pays de la Loire, avec un intérêt particulier pour l’EdTech, la mobilité et les produits numériques utiles."
+    : 'Portfolio of Johan Chereau, a software, web and mobile developer based in France, with a particular interest in EdTech, mobility and useful digital products.',
+  canonicalPath = `/${locale}/`,
+  image = '/brand/og.png',
+  imageAlt = locale === 'fr' ? `Portfolio de ${siteConfig.name}` : `${siteConfig.name} portfolio`,
+  schema,
+  noindex = false,
+} = Astro.props;
+
+const defaultTitle = locale === 'fr' ? 'Développeur logiciel, web & mobile · Pays de la Loire' : 'Software, Web & Mobile Developer · France';
+const effectiveTitle = title ?? defaultTitle;
+const pageTitle = `${effectiveTitle} — ${siteConfig.name}`;
+const canonical = new URL(canonicalPath, siteConfig.url).toString();
+const imageUrl = new URL(image, siteConfig.url).toString();
+const frPath = canonicalPath.replace(/^\/(fr|en)(?=\/|$)/, '/fr');
+const enPath = canonicalPath.replace(/^\/(fr|en)(?=\/|$)/, '/en');
+const frUrl = new URL(frPath, siteConfig.url).toString();
+const enUrl = new URL(enPath, siteConfig.url).toString();
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${siteConfig.url}/#person`,
+  name: siteConfig.name,
+  url: siteConfig.url,
+  email: `mailto:${siteConfig.email}`,
+  jobTitle: locale === 'fr' ? 'Développeur logiciel, web et mobile' : 'Software, Web & Mobile Developer',
+  homeLocation: { '@type': 'Place', name: siteConfig.location },
+  sameAs: [siteConfig.github, siteConfig.linkedin],
+  knowsLanguage: ['fr', 'en'],
+  knowsAbout: [
+    'Software development',
+    'Web development',
+    'Mobile application development',
+    'Product design',
+    'TypeScript',
+    'React',
+    'Kotlin',
+    'Spring Boot',
+    'PostgreSQL',
+    'Three.js',
+    'Product design',
+    'Educational technology',
+    'Mobility',
+  ],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteConfig.url}/#website`,
+  url: siteConfig.url,
+  name: `${siteConfig.name} — Portfolio`,
+  inLanguage: ['fr', 'en'],
+  author: { '@id': `${siteConfig.url}/#person` },
+};
+
+const webpageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  url: canonical,
+  name: pageTitle,
+  description,
+  inLanguage: locale,
+  isPartOf: { '@id': `${siteConfig.url}/#website` },
+  about: { '@id': `${siteConfig.url}/#person` },
+};
+
+const extraSchemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+const schemas = [personSchema, websiteSchema, webpageSchema, ...extraSchemas];
+---
+<!doctype html>
+<html lang={locale} data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="author" content={siteConfig.name} />
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1'} />
+    <meta name="theme-color" content="#071018" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f4f8fb" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="fr" href={frUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={frUrl} />
+    <link rel="me" href={siteConfig.github} />
+    <link rel="me" href={siteConfig.linkedin} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={`${siteConfig.name} — Portfolio`} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : 'en_US'} />
+    <meta property="og:locale:alternate" content={locale === 'fr' ? 'en_US' : 'fr_FR'} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={imageAlt} />
+
+    <title>{pageTitle}</title>
+    <script is:inline>
+      (() => {
+        try {
+          const saved = localStorage.getItem('theme');
+          const theme = saved || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+          document.documentElement.dataset.theme = theme;
+          if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+            document.documentElement.classList.add('motion-ready');
+          }
+        } catch {}
+      })();
+    </script>
+    {schemas.map((item) => <script type="application/ld+json" set:html={JSON.stringify(item)} />)}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{locale === 'fr' ? 'Aller au contenu' : 'Skip to content'}</a>
+    <div class="page-noise" aria-hidden="true"></div>
+    <slot />
+    <script is:inline>
+      (() => {
+        if (!document.documentElement.classList.contains('motion-ready')) return;
+        const nodes = Array.from(document.querySelectorAll('[data-reveal]'));
+        if (!nodes.length) return;
+        const reveal = (node) => node.classList.add('is-visible');
+        const observer = new IntersectionObserver((entries, instance) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            reveal(entry.target);
+            instance.unobserve(entry.target);
+          }
+        }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+        nodes.forEach((node) => observer.observe(node));
+      })();
+    </script>
+  </body>
+</html>

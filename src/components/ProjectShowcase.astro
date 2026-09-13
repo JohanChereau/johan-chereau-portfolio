@@ -1,0 +1,87 @@
+---
+import type { Locale } from '../config';
+const { locale, kind } = Astro.props as { locale: Locale; kind: 'cosmify' | 'ctcr-trainer' };
+---
+<section class:list={['product-showcase', `showcase-${kind}`]} aria-label={locale === 'fr' ? 'Aperçu visuel du produit' : 'Visual product preview'}>
+  {kind === 'ctcr-trainer' ? (
+    <>
+      <div class="showcase-main showcase-panel">
+        <div class="showcase-browserbar"><i></i><i></i><i></i><span>CTCR Trainer</span></div>
+        <div class="ctcr-dashboard">
+          <aside>
+            <strong>CTCR</strong>
+            <span class="active">{locale === 'fr' ? 'Aujourd’hui' : 'Today'}</span>
+            <span>{locale === 'fr' ? 'Cours' : 'Lessons'}</span>
+            <span>Quiz</span>
+            <span>{locale === 'fr' ? 'Calculs' : 'Calculations'}</span>
+          </aside>
+          <div class="ctcr-dashboard-main">
+            <div class="ctcr-welcome">
+              <small>{locale === 'fr' ? 'MISSION DU JOUR' : 'DAILY MISSION'}</small>
+              <h3>{locale === 'fr' ? 'Réglementation sociale' : 'Social regulations'}</h3>
+              <div class="ctcr-progress"><span></span></div>
+            </div>
+            <div class="ctcr-quiz-card">
+              <div><small>QUESTION 08 / 20</small><span>01:42</span></div>
+              <strong>{locale === 'fr' ? 'Après 4 h 30 de conduite continue…' : 'After 4 h 30 of continuous driving…'}</strong>
+              <span class="mock-choice active">45 min</span>
+              <span class="mock-choice">30 min</span>
+              <span class="mock-choice">15 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="showcase-side">
+        <article class="showcase-panel showcase-mini lesson-preview">
+          <span class="mini-eyebrow">{locale === 'fr' ? 'COURS' : 'LESSONS'}</span>
+          <h3>{locale === 'fr' ? 'Des repères clairs.' : 'Clear reference points.'}</h3>
+          <div class="lesson-lines"><i></i><i></i><i></i><i></i></div>
+          <div class="lesson-callout">4 h 30 <span>→</span> 45 min</div>
+        </article>
+        <article class="showcase-panel showcase-mini exam-preview">
+          <span class="mini-eyebrow">EXAM MODE</span>
+          <div class="exam-ring"><strong>20</strong><small>{locale === 'fr' ? 'questions' : 'questions'}</small></div>
+          <div class="exam-stats"><span>Shuffle</span><span>Timer</span><span>Retry</span></div>
+        </article>
+      </div>
+    </>
+  ) : (
+    <>
+      <div class="showcase-main showcase-panel">
+        <div class="showcase-browserbar"><i></i><i></i><i></i><span>Cosmify</span></div>
+        <div class="cosmify-app">
+          <aside>
+            <strong>COSMIFY</strong>
+            <span class="active">Packs</span>
+            <span>Backups</span>
+            <span>Activity</span>
+          </aside>
+          <div class="cosmify-main">
+            <div class="cosmify-toolbar"><div><small>PACKS</small><strong>{locale === 'fr' ? 'Bibliothèque locale' : 'Local library'}</strong></div><span class="mock-import">+ Import</span></div>
+            <div class="cosmify-pack-grid">
+              <article><i class="pack-cover cover-a"></i><strong>Camo Style</strong><small>248 skins</small></article>
+              <article><i class="pack-cover cover-b"></i><strong>Midnight</strong><small>112 skins</small></article>
+              <article><i class="pack-cover cover-c"></i><strong>Archive</strong><small>Backup</small></article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="showcase-side">
+        <article class="showcase-panel showcase-mini backup-preview">
+          <span class="mini-eyebrow">BACKUP</span>
+          <div class="backup-icon">↺</div>
+          <h3>{locale === 'fr' ? 'Revenir en arrière sans stress.' : 'Roll back without the stress.'}</h3>
+          <div class="backup-row"><span>Auto backup</span><strong>12:42</strong></div>
+        </article>
+        <article class="showcase-panel showcase-mini activity-preview">
+          <span class="mini-eyebrow">ACTIVITY</span>
+          <ul>
+            <li><i></i><span>{locale === 'fr' ? 'Pack importé' : 'Pack imported'}</span><small>10:14</small></li>
+            <li><i></i><span>{locale === 'fr' ? 'Backup créé' : 'Backup created'}</span><small>10:16</small></li>
+            <li><i></i><span>{locale === 'fr' ? 'Pack restauré' : 'Pack restored'}</span><small>10:21</small></li>
+          </ul>
+        </article>
+      </div>
+    </>
+  )}
+</section>

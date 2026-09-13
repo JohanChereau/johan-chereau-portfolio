@@ -1,0 +1,10 @@
+/* TEAM */
+Developer & designer: Johan Chereau
+Location: Pays de la Loire, France
+Contact: contact@johan-chereau.com
+
+/* SITE */
+Languages: Français / English
+Stack: Astro, TypeScript, Tailwind CSS, MDX
+Tech icons: Tech Stack Icons (tech-stack-icons.com)
+Approach: static-first, accessible, responsive, performance-conscious

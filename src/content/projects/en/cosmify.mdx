@@ -1,0 +1,65 @@
+---
+title: Cosmify
+projectId: cosmify
+locale: en
+description: A modern desktop application to import, understand, edit, back up and restore Minecraft Bedrock packs.
+year: 2026
+category: Desktop product
+featured: true
+order: 2
+accent: violet
+technologies:
+  - React
+  - TypeScript
+  - Tauri
+  - Vite
+  - Vitest
+links:
+  github: https://github.com/JohanChereau/cosmify
+gallery:
+  - src: /projects/cosmify/cosmify_0_desktop_home_page.webp
+    alt: Cosmify home screen in a desktop window
+    caption: Home and local library
+    width: 1920
+    height: 1440
+  - src: /projects/cosmify/cosmify_0_desktop_cosmetics_page.webp
+    alt: Cosmify cosmetics management page
+    caption: Cosmetics management
+    width: 1920
+    height: 1440
+  - src: /projects/cosmify/cosmify_0_desktop_settings_page.webp
+    alt: Cosmify settings page
+    caption: Application settings
+    width: 1920
+    height: 1440
+---
+## Context
+
+Cosmify starts with a very concrete problem: customising Minecraft Bedrock packs can quickly become fragile, opaque and painful to maintain. Between manifests, skin definitions, geometries, backups and files to restore, a small change can turn into a hunt for the broken file.
+
+The goal was not to build a pretty file browser, but a **real desktop product** that makes the workflow understandable and reversible.
+
+## The product
+
+Cosmify imports a host pack, extracts useful information, manages skins and their resources, and restores configurations safely through automatic backups.
+
+The central design principle is straightforward: **a risky action should remain understandable, traceable and recoverable**.
+
+### Core features
+
+- pack import and analysis;
+- manifest and configuration parsing;
+- skin and geometry management;
+- backup creation and restoration;
+- activity log;
+- automated tests and release workflow.
+
+## Engineering
+
+The interface is built with React and TypeScript. Tauri provides the desktop/native layer, with Rust underneath.
+
+That separation keeps the UI in a modern web ecosystem while providing clean access to the local filesystem.
+
+## An end-to-end desktop product
+
+Cosmify combines interface design, local file manipulation, data parsing, backups, restoration, activity tracking, tests and a release workflow. It therefore goes well beyond a conventional web interface wrapped in a desktop window.

@@ -1,0 +1,50 @@
+---
+const { kind } = Astro.props as { kind: 1 | 2 | 3 };
+---
+<div class:list={['capability-visual', `capability-visual-${kind}`]} aria-hidden="true">
+  {kind === 1 && (
+    <svg viewBox="0 0 360 112" role="img">
+      <circle class="idea-halo" cx="35" cy="56" r="20" />
+      <circle class="node node-start" cx="35" cy="56" r="7" />
+      <path class="flow" d="M56 56h28" />
+      <path class="flow-arrow" d="m79 51 6 5-6 5" />
+      <rect class="wireframe concept-frame" x="94" y="30" width="86" height="52" rx="13" />
+      <rect class="ui-line accent" x="109" y="44" width="36" height="6" rx="3" />
+      <rect class="ui-line" x="109" y="57" width="55" height="5" rx="2.5" />
+      <rect class="ui-line" x="109" y="68" width="43" height="5" rx="2.5" />
+      <path class="flow" d="M190 56h27" />
+      <path class="flow-arrow" d="m212 51 6 5-6 5" />
+      <rect class="wireframe product-frame" x="228" y="20" width="98" height="72" rx="15" />
+      <rect class="ui-line accent" x="244" y="37" width="45" height="6" rx="3" />
+      <rect class="ui-line" x="244" y="51" width="65" height="5" rx="2.5" />
+      <rect class="ui-button" x="244" y="66" width="29" height="10" rx="5" />
+      <rect class="ui-button ghost" x="279" y="66" width="30" height="10" rx="5" />
+    </svg>
+  )}
+  {kind === 2 && (
+    <svg viewBox="0 0 360 112" role="img">
+      <rect class="wireframe" x="34" y="22" width="232" height="68" rx="15" />
+      <circle class="window-dot" cx="53" cy="38" r="3" />
+      <circle class="window-dot" cx="64" cy="38" r="3" />
+      <rect class="ui-line accent" x="53" y="53" width="91" height="7" rx="3.5" />
+      <rect class="ui-line" x="53" y="68" width="164" height="6" rx="3" />
+      <rect class="phone" x="244" y="11" width="72" height="91" rx="17" />
+      <rect class="phone-notch" x="267" y="20" width="26" height="4" rx="2" />
+      <circle class="node" cx="280" cy="54" r="7" />
+      <rect class="ui-line mobile-line" x="260" y="71" width="40" height="5" rx="2.5" />
+      <rect class="ui-line mobile-line short" x="266" y="82" width="28" height="5" rx="2.5" />
+    </svg>
+  )}
+  {kind === 3 && (
+    <svg viewBox="0 0 360 112" role="img">
+      <path class="route" d="M42 67C86 27 124 91 169 51s83-24 149 8" />
+      <circle class="route-node" cx="42" cy="67" r="12" />
+      <circle class="route-node active" cx="169" cy="51" r="12" />
+      <circle class="route-node" cx="318" cy="59" r="12" />
+      <rect class="context-card" x="68" y="23" width="72" height="24" rx="9" />
+      <rect class="context-card" x="207" y="69" width="82" height="24" rx="9" />
+      <rect class="context-line accent" x="80" y="33" width="27" height="4" rx="2" />
+      <rect class="context-line" x="219" y="79" width="37" height="4" rx="2" />
+    </svg>
+  )}
+</div>

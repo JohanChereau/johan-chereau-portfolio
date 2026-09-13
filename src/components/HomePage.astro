@@ -1,0 +1,166 @@
+---
+import { getCollection } from 'astro:content';
+import { siteConfig, type Locale } from '../config';
+import { t } from '../i18n';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import SectionHeading from './SectionHeading.astro';
+import ProjectCard from './ProjectCard.astro';
+import TechStack from './TechStack.astro';
+import ExperienceStrip from './ExperienceStrip.astro';
+import CapabilityVisual from './CapabilityVisual.astro';
+
+const { locale } = Astro.props as { locale: Locale };
+const copy = t(locale);
+const projects = (await getCollection('projects'))
+  .filter((project) => project.data.locale === locale && project.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+const formKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
+---
+<BaseLayout locale={locale} canonicalPath={`/${locale}/`}>
+  <Header locale={locale} />
+  <main id="main">
+    <section class="hero shell section-pad">
+      <div class="hero-copy">
+        <p class="eyebrow hero-eyebrow"><span class="status-dot"></span>{copy.hero.eyebrow}</p>
+        <h1><span>{copy.hero.titleA}</span><strong>{copy.hero.titleB}</strong></h1>
+        <p class="hero-body">{copy.hero.body}</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">{copy.hero.primary}<span aria-hidden="true">↓</span></a>
+          <a class="button secondary" href="#contact">{copy.hero.secondary}<span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="availability"><span></span>{copy.hero.availability}</p>
+      </div>
+
+      <div class="logo-stage" aria-hidden="true">
+        <div class="logo-glow"></div>
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+        <div class="logo-object"><img src="/brand/logo.svg" alt="" /></div>
+        <span class="orbit-label label-a">EDTECH</span>
+        <span class="orbit-label label-b">MOBILITY</span>
+        <span class="orbit-label label-c">PRODUCT</span>
+      </div>
+      <div class="hero-scroll" aria-hidden="true"><span></span>SCROLL</div>
+    </section>
+
+    <section class="section-pad shell" id="work">
+      <div class="section-topline">
+        <SectionHeading eyebrow={copy.work.eyebrow} title={copy.work.title} body={copy.work.body} />
+        <a class="text-link desktop-only" href={`/${locale}/projects/`}>{copy.work.all} ↗</a>
+      </div>
+      {projects.length > 0 ? (
+        <div class="featured-projects">
+          {projects.map((project, index) => <ProjectCard project={project} locale={locale} large={index === 0} index={index} />)}
+        </div>
+      ) : (
+        <p class="empty-state">{copy.projects.empty}</p>
+      )}
+      <a class="text-link mobile-only section-link" href={`/${locale}/projects/`}>{copy.work.all} ↗</a>
+    </section>
+
+    <section class="section-pad shell" id="expertise">
+      <SectionHeading eyebrow={copy.build.eyebrow} title={copy.build.title} body={copy.build.body} />
+      <div class="capability-grid">
+        {copy.build.cards.map(([index, title, body], cardIndex) => (
+          <article class="capability-card" data-reveal style={`--reveal-delay:${Math.min(cardIndex * 55, 110)}ms`}>
+            <span class="capability-index">{index}</span>
+            <CapabilityVisual kind={(cardIndex + 1) as 1 | 2 | 3} />
+            <h3>{title}</h3>
+            <p>{body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section-pad shell about-section" id="about">
+      <div class="about-aside" data-reveal>
+        <p class="eyebrow">{copy.about.eyebrow}</p>
+        <div class="dual-path" aria-hidden="true">
+          <span class="dual-path-label dual-path-dev">DEV</span>
+          <span class="dual-path-label dual-path-mobility">MOBILITY</span>
+          <svg viewBox="0 0 300 112" role="presentation">
+            <defs>
+              <linearGradient id="pathDev" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="currentColor" stop-opacity=".18" />
+                <stop offset="1" stop-color="var(--cyan)" />
+              </linearGradient>
+              <linearGradient id="pathMobility" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="currentColor" stop-opacity=".18" />
+                <stop offset="1" stop-color="var(--violet)" />
+              </linearGradient>
+            </defs>
+            <path class="dual-path-line" d="M78 28H132L181 56H217" stroke="url(#pathDev)" />
+            <path class="dual-path-line" d="M78 84H132L181 56" stroke="url(#pathMobility)" />
+            <circle class="dual-path-node" cx="181" cy="56" r="4" />
+          </svg>
+          <span class="dual-path-target">PRODUCT</span>
+        </div>
+      </div>
+      <div class="about-copy" data-reveal>
+        <h2>{copy.about.title}</h2>
+        <div class="about-columns"><p>{copy.about.p1}</p><p>{copy.about.p2}</p></div>
+        <div class="about-note"><span>01</span><p>{copy.about.note}</p></div>
+      </div>
+    </section>
+
+    <section class="section-pad shell experience-section">
+      <SectionHeading eyebrow={copy.experience.eyebrow} title={copy.experience.title} body={copy.experience.body} />
+      <ExperienceStrip locale={locale} />
+    </section>
+
+    <section class="section-pad shell tech-section">
+      <SectionHeading eyebrow={copy.stack.eyebrow} title={copy.stack.title} body={copy.stack.body} />
+      <TechStack locale={locale} />
+    </section>
+
+    <section class="section-pad shell contact-section" id="contact">
+      <div class="contact-copy" data-reveal>
+        <p class="eyebrow">{copy.contact.eyebrow}</p>
+        <h2>{copy.contact.title}</h2>
+        <p>{copy.contact.body}</p>
+        <div class="contact-direct">
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}<span>↗</span></a>
+          <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">LinkedIn<span>↗</span></a>
+          <a href={siteConfig.github} target="_blank" rel="noreferrer">GitHub<span>↗</span></a>
+        </div>
+      </div>
+
+      <form class="contact-form" data-reveal style="--reveal-delay:60ms" action="https://api.web3forms.com/submit" method="POST" data-contact-form data-email={siteConfig.email}>
+        <input type="hidden" name="access_key" value={formKey} />
+        <input type="hidden" name="from_name" value="Portfolio Johan Chereau" />
+        <input type="hidden" name="redirect" value={`${siteConfig.url}/${locale}/?sent=1#contact`} />
+        <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" autocomplete="off" />
+        <div class="field-row">
+          <label><span>01 · {copy.contact.name}</span><input name="name" autocomplete="name" required maxlength="80" placeholder={locale === 'fr' ? 'Votre nom' : 'Your name'} /></label>
+          <label><span>02 · {copy.contact.email}</span><input type="email" name="email" autocomplete="email" required placeholder="name@example.com" /></label>
+        </div>
+        <label><span>03 · {copy.contact.subject}</span><input name="subject" required maxlength="120" placeholder={locale === 'fr' ? 'Parlons de votre idée…' : "Let's talk about your idea…"} /></label>
+        <label><span>04 · {copy.contact.message}</span><textarea name="message" required minlength="20" maxlength="3000" rows="6" placeholder={locale === 'fr' ? 'Quelques lignes suffisent pour commencer.' : 'A few lines are enough to get started.'}></textarea></label>
+        <p class="form-success" data-form-success hidden>{copy.contact.success}</p>
+        <div class="form-bottom"><small>{copy.contact.note}</small><button class="button primary" type="submit">{copy.contact.send}<span aria-hidden="true">↗</span></button></div>
+      </form>
+    </section>
+  </main>
+  <Footer locale={locale} />
+
+  <script>
+    const form = document.querySelector('[data-contact-form]');
+    const success = document.querySelector('[data-form-success]');
+    if (new URLSearchParams(window.location.search).get('sent') === '1' && success instanceof HTMLElement) {
+      success.hidden = false;
+    }
+    form?.addEventListener('submit', (event) => {
+      if (!(form instanceof HTMLFormElement)) return;
+      const key = form.querySelector('input[name="access_key"]');
+      if (!(key instanceof HTMLInputElement) || key.value.trim()) return;
+      event.preventDefault();
+      const data = new FormData(form);
+      const email = form.dataset.email;
+      const subject = String(data.get('subject') ?? 'Portfolio contact');
+      const body = `${data.get('message') ?? ''}\n\n— ${data.get('name') ?? ''} (${data.get('email') ?? ''})`;
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
+</BaseLayout>

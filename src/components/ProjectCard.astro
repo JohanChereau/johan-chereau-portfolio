@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../config';
+import { t } from '../i18n';
+import ProjectVisual from './ProjectVisual.astro';
+
+const { project, locale, large = false, index = 0 } = Astro.props as {
+  project: CollectionEntry<'projects'>;
+  locale: Locale;
+  large?: boolean;
+  index?: number;
+};
+const copy = t(locale);
+const kind = project.data.projectId === 'cosmify' ? 'cosmify' : 'ctcr-trainer';
+---
+<article
+  class:list={['project-card', large && 'project-card-large', `accent-${project.data.accent}`]}
+  data-reveal
+  style={`--reveal-delay:${Math.min(index * 55, 110)}ms`}
+>
+  <a class="project-card-hit" href={`/${locale}/projects/${project.data.projectId}/`} aria-label={`${copy.work.caseStudy} — ${project.data.title}`}></a>
+  <div class="project-card-copy">
+    <div class="project-meta">
+      <span>{project.data.category}</span>
+      <span>{project.data.year}</span>
+    </div>
+    <h3>{project.data.title}</h3>
+    <p>{project.data.description}</p>
+    <div class="project-tags">
+      {project.data.technologies.slice(0, 4).map((tech) => <span>{tech}</span>)}
+    </div>
+    <span class="text-link">{copy.work.caseStudy} <span aria-hidden="true">↗</span></span>
+  </div>
+  <ProjectVisual kind={kind} locale={locale} />
+</article>

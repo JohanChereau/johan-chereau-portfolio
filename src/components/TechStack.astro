@@ -1,0 +1,61 @@
+---
+import type { Locale } from '../config';
+import { t } from '../i18n';
+import TechBrandIcon from './TechBrandIcon.jsx';
+
+const { locale } = Astro.props as { locale: Locale };
+const copy = t(locale);
+
+const tech = [
+  ['typescript', 'TypeScript'],
+  ['react', 'React'],
+  ['nodejs', 'Node.js'],
+  ['kotlin', 'Kotlin'],
+  ['spring', 'Spring Boot'],
+  ['postgresql', 'PostgreSQL'],
+  ['supabase', 'Supabase'],
+  ['git', 'Git'],
+  ['threejs', 'Three.js'],
+  ['tauri', 'Tauri'],
+] as const;
+
+const creative = [
+  ['figma', 'Figma'],
+  ['photoshop', 'Photoshop'],
+  ['inkspace', 'Inkscape'],
+] as const;
+---
+<div class="toolkit">
+  <div class="toolkit-main">
+    <p class="toolkit-label" data-reveal>{copy.stack.current}</p>
+    <ul class="tech-grid" role="list">
+      {tech.map(([icon, name], index) => (
+        <li class="tech-chip" data-reveal style={`--reveal-delay:${Math.min(index * 22, 110)}ms`}>
+          <TechBrandIcon name={icon} />
+          <span>{name}</span>
+        </li>
+      ))}
+    </ul>
+    <div class="stack-next" data-reveal style="--reveal-delay:80ms">
+      <span class="stack-next-label">{copy.stack.next}</span>
+      <strong>React Native</strong>
+      <span>{copy.stack.nextBody}</span>
+    </div>
+  </div>
+
+  <article class="creative-toolkit">
+    <div class="creative-toolkit-copy" data-reveal>
+      <p class="toolkit-label">{copy.stack.creative}</p>
+      <h3>{copy.stack.creativeTitle}</h3>
+      <p>{copy.stack.creativeBody}</p>
+    </div>
+    <ul class="creative-tools" role="list">
+      {creative.map(([icon, name], index) => (
+        <li data-reveal style={`--reveal-delay:${Math.min(index * 45, 90)}ms`}>
+          <TechBrandIcon name={icon} />
+          <span>{name}</span>
+        </li>
+      ))}
+    </ul>
+  </article>
+</div>

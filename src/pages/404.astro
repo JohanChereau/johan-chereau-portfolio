@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout locale="fr" title="Page introuvable" description="La page demandée n’existe pas ou a été déplacée." canonicalPath="/404/" noindex={true}>
+  <Header locale="fr" />
+  <main id="main" class="not-found shell">
+    <div class="not-found-inner">
+      <span class="not-found-code">404 · NOT FOUND</span>
+      <h1>Cette route ne mène nulle part.</h1>
+      <p>La page a peut-être bougé, ou ce lien a pris un détour un peu trop créatif.</p>
+      <div class="not-found-actions">
+        <a class="button primary" href="/fr/">Retour à l’accueil</a>
+        <a class="button secondary" href="/en/">English version</a>
+      </div>
+    </div>
+  </main>
+  <Footer locale="fr" />
+</BaseLayout>

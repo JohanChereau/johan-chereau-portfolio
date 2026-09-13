@@ -1,0 +1,26 @@
+---
+import { siteConfig, type Locale } from '../config';
+import { t } from '../i18n';
+const { locale } = Astro.props as { locale: Locale };
+const copy = t(locale);
+---
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div>
+      <a class="brand footer-brand" href={`/${locale}/`}>
+        <img src="/brand/logo.svg" alt="" width="40" height="30" loading="lazy" />
+        <span>{siteConfig.name}</span>
+      </a>
+      <p>{copy.footer.tagline}</p>
+    </div>
+    <div class="footer-links">
+      <a href={siteConfig.github} target="_blank" rel="noreferrer">GitHub ↗</a>
+      <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+      <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+    </div>
+  </div>
+  <div class="shell footer-bottom">
+    <span>© {new Date().getFullYear()} {siteConfig.name}. {copy.footer.legal}</span>
+    <span>Astro · TypeScript · Tailwind CSS</span>
+  </div>
+</footer>
