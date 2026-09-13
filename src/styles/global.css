@@ -1370,6 +1370,22 @@ html[data-theme="light"] .theme-toggle .sun {
   background: rgba(100, 230, 165, 0.06);
   font-size: 0.85rem;
 }
+
+.form-error {
+  margin: 1.1rem 0 0;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 110, 110, 0.28);
+  border-radius: 14px;
+  color: #ff9292;
+  background: rgba(255, 110, 110, 0.06);
+  font-size: 0.85rem;
+}
+
+.contact-form button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
 .form-bottom {
   display: flex;
   justify-content: space-between;
